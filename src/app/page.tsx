@@ -34,88 +34,56 @@ export default function HomePage() {
       <Preloader />
 
       {/* 1. Cinematic Hero — "Time, Perfected." + radial glow */}
-      <div className="relative z-[1]">
+      <div className="relative">
         <ParticleField />
         <HeroSection />
       </div>
 
       {/* 2. Trust Bar — scrolling press mentions */}
-      <div className="relative z-[2]">
-        <TrustBar />
-      </div>
+      <TrustBar />
 
-      {/* 3. Watch Build — scroll-synced assembly (PINNED) */}
-      <div className="relative z-[3]">
-        <WatchBuildAnimation />
-      </div>
+      {/* 3. Watch Build — scroll-synced assembly (sticky) */}
+      <WatchBuildAnimation />
 
       {/* 4. Features — hover lift + gold border glow cards */}
-      <div className="relative z-[4]">
-        <FeaturesGrid />
-      </div>
+      <FeaturesGrid />
 
       {/* 5. Press Badges — muted silver logos + trust line */}
-      <div className="relative z-[5]">
-        <PressBadges />
-      </div>
+      <PressBadges />
 
-      {/* 6. Showcase — featured products (PINNED horizontal scroll) */}
-      <div className="relative z-[6]">
-        <ShowcaseSection />
-      </div>
+      {/* 6. Showcase — featured products (sticky horizontal scroll) */}
+      <ShowcaseSection />
 
       {/* 7. Problem → Solution — the "why" */}
-      <div className="relative z-[7]">
-        <ProblemSolution />
-      </div>
+      <ProblemSolution />
 
-      <div className="relative z-[8]">
-        <ParallaxDivider />
-      </div>
+      <ParallaxDivider />
 
       {/* 8. Collections — browse by category */}
-      <div className="relative z-[9]">
-        <CollectionReveal />
-      </div>
+      <CollectionReveal />
 
       {/* 9. Limited Editions — scarcity-driven section */}
-      <div className="relative z-[10]">
-        <LimitedEditions />
-      </div>
+      <LimitedEditions />
 
       {/* 10. Video — cinematic brand film */}
-      <div className="relative z-[11]">
-        <VideoShowcase />
-      </div>
+      <VideoShowcase />
 
       {/* 11. Benefits — ownership experience */}
-      <div className="relative z-[12]">
-        <BenefitsSection />
-      </div>
+      <BenefitsSection />
 
-      <div className="relative z-[13]">
-        <ParallaxDivider />
-      </div>
+      <ParallaxDivider />
 
       {/* 12. Heritage — craftsmanship timeline */}
-      <div className="relative z-[14]">
-        <HeritageTimeline />
-      </div>
+      <HeritageTimeline />
 
       {/* 13. Testimonials — collector stories & social proof */}
-      <div className="relative z-[15]">
-        <TestimonialsSection />
-      </div>
+      <TestimonialsSection />
 
       {/* 14. Statement — brand message */}
-      <div className="relative z-[16]">
-        <StatementBlock />
-      </div>
+      <StatementBlock />
 
       {/* 15. Premium CTA — "Own a Legacy." + shimmer */}
-      <div className="relative z-[17]">
-        <CTASection />
-      </div>
+      <CTASection />
     </>
   );
 }

@@ -41,15 +41,13 @@ export default function WatchBuildAnimation() {
       const textPanels = section.querySelectorAll<HTMLElement>('.build-text');
       const progressBar = section.querySelector<HTMLElement>('.build-progress');
 
-      // Pin the section while scrolling through the build stages
+      // Scroll-synced timeline using sticky container (no pin: true)
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: section,
           start: 'top top',
-          end: `+=${window.innerHeight * 4}`,
-          pin: true,
+          end: 'bottom bottom',
           scrub: 1,
-          anticipatePin: 1,
         },
       });
 
@@ -98,20 +96,23 @@ export default function WatchBuildAnimation() {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-screen bg-obsidian overflow-hidden"
+      className="relative bg-obsidian"
+      style={{ height: '400vh' }}
     >
-      {/* Subtle background glow */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <div className="w-[500px] h-[500px] bg-gold/[0.03] rounded-full blur-[180px]" />
-      </div>
+      {/* Sticky container — stays in view while parent scrolls */}
+      <div ref={containerRef} className="sticky top-0 h-screen overflow-hidden">
+        {/* Subtle background glow */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <div className="w-[500px] h-[500px] bg-gold/[0.03] rounded-full blur-[180px]" />
+        </div>
 
-      {/* Progress bar across top */}
-      <div className="absolute top-0 left-0 right-0 h-[2px] z-20">
-        <div className="build-progress h-full bg-gradient-to-r from-gold/40 via-gold to-gold/40 origin-left" />
-      </div>
+        {/* Progress bar across top */}
+        <div className="absolute top-0 left-0 right-0 h-[2px] z-20">
+          <div className="build-progress h-full bg-gradient-to-r from-gold/40 via-gold to-gold/40 origin-left" />
+        </div>
 
-      {/* Main content container */}
-      <div ref={containerRef} className="relative h-screen flex items-center">
+        {/* Main content */}
+        <div className="relative h-full flex items-center">
         <div className="container-luxury w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Left: Watch visual — layered SVG parts */}
@@ -246,6 +247,7 @@ export default function WatchBuildAnimation() {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </section>
   );
