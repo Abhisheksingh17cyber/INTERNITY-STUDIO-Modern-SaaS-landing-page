@@ -1,10 +1,22 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { WATCH_CATEGORIES } from '@/lib/constants';
 import TextReveal from '@/components/animations/TextReveal';
 import ScrollReveal from '@/components/animations/ScrollReveal';
 import MagneticButton from '@/components/animations/MagneticButton';
+
+const COLLECTION_IMAGES: Record<string, string> = {
+  dive: '/watches/watch-4.png',
+  dress: '/watches/watch-6.png',
+  chronograph: '/watches/watch-1.png',
+  sport: '/watches/watch-9.png',
+  aviation: '/watches/watch-5.png',
+  skeleton: '/watches/watch-8.png',
+  limited: '/watches/watch-11.png',
+  'limited-edition': '/watches/watch-11.png',
+};
 
 const collectionData: Record<string, { description: string; gradient: string }> = {
   dive: {
@@ -75,11 +87,15 @@ export default function CollectionsPage() {
                 >
                   <div className={`absolute inset-0 bg-gradient-to-b ${data.gradient}`} />
 
-                  {/* Watch icon placeholder */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-32 h-32 rounded-full border border-gold/10 group-hover:border-gold/30 transition-colors duration-500 flex items-center justify-center">
-                      <div className="w-20 h-20 rounded-full border border-gold/5 group-hover:border-gold/15 transition-colors duration-500" />
-                    </div>
+                  {/* Watch image */}
+                  <div className="absolute inset-0">
+                    <Image
+                      src={COLLECTION_IMAGES[cat.slug] || '/watches/watch-1.png'}
+                      alt={cat.name}
+                      fill
+                      className="object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    />
                   </div>
 
                   {/* Content */}

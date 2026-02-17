@@ -64,13 +64,7 @@ export default function CartDrawer() {
                 items.map((item) => (
                   <div key={item.productId} className="flex gap-4">
                     <div className="w-20 h-20 bg-charcoal rounded-sm overflow-hidden flex-shrink-0">
-                      {item.image && item.image !== '/placeholder-watch.jpg' ? (
-                        <Image src={item.image} alt={item.name} width={80} height={80} className="object-cover w-full h-full" />
-                      ) : (
-                        <div className="w-full h-full flex items-center justify-center">
-                          <div className="w-10 h-10 rounded-full border border-gold/20" />
-                        </div>
-                      )}
+                      <Image src={item.image || '/watches/watch-1.png'} alt={item.name} width={80} height={80} className="object-cover w-full h-full" />
                     </div>
 
                     <div className="flex-1 min-w-0">

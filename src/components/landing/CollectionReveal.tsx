@@ -1,9 +1,18 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { WATCH_CATEGORIES } from '@/lib/constants';
 import ScrollReveal from '@/components/animations/ScrollReveal';
 import TextReveal from '@/components/animations/TextReveal';
+
+const COLLECTION_IMAGES: Record<string, string> = {
+  dive: '/watches/watch-4.png',
+  dress: '/watches/watch-6.png',
+  chronograph: '/watches/watch-1.png',
+  skeleton: '/watches/watch-8.png',
+  'limited-edition': '/watches/watch-11.png',
+};
 
 export default function CollectionReveal() {
   const collections = WATCH_CATEGORIES.slice(0, 3);
@@ -29,12 +38,16 @@ export default function CollectionReveal() {
                 className="group relative aspect-[3/4] overflow-hidden bg-charcoal"
                 data-cursor="expand"
               >
-                {/* Background gradient representing the collection */}
-                <div className="absolute inset-0 bg-gradient-to-b from-charcoal-light/50 to-obsidian transition-transform duration-700 group-hover:scale-105" />
-                
-                {/* Watch silhouette placeholder */}
-                <div className="absolute inset-0 flex items-center justify-center opacity-10 group-hover:opacity-20 transition-opacity duration-700">
-                  <div className="w-48 h-48 rounded-full border-2 border-gold" />
+                {/* Background image */}
+                <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-105">
+                  <Image
+                    src={COLLECTION_IMAGES[collection.slug] || '/watches/watch-1.png'}
+                    alt={collection.name}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                  <div className="absolute inset-0 bg-obsidian/50" />
                 </div>
 
                 {/* Content overlay */}

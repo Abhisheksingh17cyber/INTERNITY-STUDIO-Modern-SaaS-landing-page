@@ -17,10 +17,11 @@ export default function QuickView() {
   const handleAdd = () => {
     if (!product) return;
     addItem({
-      id: product._id || product.slug,
+      productId: product._id || product.slug,
       name: product.name,
       price: product.price,
-      image: product.images?.[0] || '/placeholder-watch.jpg',
+      image: product.images?.[0] || '/watches/watch-1.png',
+      slug: product.slug,
       quantity: 1,
     });
     setQuickView(null);

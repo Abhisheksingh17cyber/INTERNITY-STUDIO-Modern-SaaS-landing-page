@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { MOCK_PRODUCTS } from '@/lib/constants';
 import { formatPrice } from '@/lib/utils';
 import HorizontalScroll from '@/components/animations/HorizontalScroll';
@@ -39,18 +40,17 @@ export default function ShowcaseSection() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
                 {/* Watch visual */}
                 <div className="relative aspect-square bg-charcoal flex items-center justify-center overflow-hidden gold-border-glow">
-                  <div className="relative w-48 h-48 md:w-64 md:h-64">
-                    {/* Placeholder watch face */}
-                    <div className="absolute inset-0 rounded-full border-2 border-gold/20 group-hover:border-gold/40 transition-colors duration-700" />
-                    <div className="absolute inset-4 rounded-full bg-gradient-to-br from-charcoal-light to-obsidian border border-gold/10" />
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="font-display text-gold/20 text-xs tracking-[0.3em] uppercase">
-                        {product.category}
-                      </span>
-                    </div>
-                    {/* Glow on hover */}
-                    <div className="absolute -inset-8 bg-gold/0 group-hover:bg-gold/5 rounded-full blur-3xl transition-colors duration-700" />
-                  </div>
+                  <Image
+                    src={product.images[0]}
+                    alt={product.name}
+                    fill
+                    className="object-cover transition-transform duration-700 ease-luxury group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                  {/* Subtle overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-obsidian/40 via-transparent to-transparent pointer-events-none" />
+                  {/* Glow on hover */}
+                  <div className="absolute -inset-8 bg-gold/0 group-hover:bg-gold/5 rounded-full blur-3xl transition-colors duration-700" />
                   
                   {/* Number index */}
                   <span className="absolute top-6 left-6 font-display text-gold/10 text-7xl md:text-8xl">

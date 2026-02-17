@@ -34,7 +34,7 @@ const ProductSchema = new Schema<IProduct>(
     timestamps: true,
     toJSON: {
       virtuals: true,
-      transform: (_doc, ret) => {
+      transform: (_doc: any, ret: any) => {
         ret.id = ret._id.toString();
         if (ret.specs instanceof Map) {
           ret.specs = Object.fromEntries(ret.specs);

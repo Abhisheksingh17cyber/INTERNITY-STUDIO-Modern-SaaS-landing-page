@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { gsap, ScrollTrigger, registerGSAPPlugins, splitTextIntoSpans } from '@/lib/gsap';
 import MagneticButton from '@/components/animations/MagneticButton';
 import { ArrowRight } from 'lucide-react';
@@ -156,46 +157,18 @@ export default function HeroSection() {
               <div className="absolute inset-0 rounded-full border border-gold/10 animate-spin-slow" />
               <div className="absolute inset-4 rounded-full border border-gold/5 animate-spin-slow" style={{ animationDirection: 'reverse' }} />
               
-              {/* Watch face */}
-              <div className="absolute inset-8 rounded-full bg-gradient-to-br from-charcoal to-charcoal-dark border border-gold/20 flex items-center justify-center overflow-hidden">
-                {/* Dial */}
-                <div className="relative w-full h-full flex items-center justify-center">
-                  {/* Hour markers */}
-                  {[...Array(12)].map((_, i) => (
-                    <div
-                      key={i}
-                      className="absolute w-[2px] bg-gold"
-                      style={{
-                        height: i % 3 === 0 ? '16px' : '8px',
-                        top: '12%',
-                        left: '50%',
-                        transformOrigin: `50% ${(300 * 0.38)}px`,
-                        transform: `translateX(-50%) rotate(${i * 30}deg)`,
-                      }}
-                    />
-                  ))}
-                  
-                  {/* Brand text on dial */}
-                  <div className="absolute top-[35%] text-center">
-                    <span className="font-display text-gold text-[10px] md:text-xs tracking-[0.3em] uppercase block">
-                      Internity
-                    </span>
-                    <span className="font-body text-gold/40 text-[7px] md:text-[8px] tracking-[0.2em] uppercase block mt-1">
-                      Swiss Made
-                    </span>
-                  </div>
-                  
-                  {/* Hands */}
-                  <div className="absolute w-[3px] h-[28%] bg-gold rounded-full left-1/2 top-[22%] -translate-x-1/2 origin-bottom rotate-[-30deg] shadow-lg" />
-                  <div className="absolute w-[2px] h-[35%] bg-gold/80 rounded-full left-1/2 top-[15%] -translate-x-1/2 origin-bottom rotate-[60deg]" />
-                  <div className="absolute w-[1px] h-[38%] bg-gold-light rounded-full left-1/2 top-[12%] -translate-x-1/2 origin-bottom rotate-[120deg] animate-[spin_60s_linear_infinite]" />
-                  
-                  {/* Center dot */}
-                  <div className="absolute w-3 h-3 rounded-full bg-gold shadow-lg left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" />
-                  
-                  {/* Sub-dial decoration */}
-                  <div className="absolute bottom-[30%] w-12 h-12 md:w-16 md:h-16 rounded-full border border-gold/10" />
-                </div>
+              {/* Watch image */}
+              <div className="absolute inset-8 rounded-full overflow-hidden border border-gold/20 flex items-center justify-center">
+                <Image
+                  src="/watches/watch-1.png"
+                  alt="Internity Sovereign Chronograph"
+                  fill
+                  className="object-cover scale-110 group-hover:scale-115 transition-transform duration-1000"
+                  priority
+                  sizes="(max-width: 768px) 300px, (max-width: 1024px) 450px, 500px"
+                />
+                {/* Subtle overlay for blending */}
+                <div className="absolute inset-0 bg-gradient-to-t from-obsidian/30 via-transparent to-obsidian/10 pointer-events-none" />
               </div>
 
               {/* Crown */}
