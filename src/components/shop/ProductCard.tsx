@@ -60,7 +60,7 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
               <button
                 onClick={(e) => {
                   e.preventDefault();
-                  setQuickView(product);
+                  setQuickView(product._id || product.slug);
                 }}
                 className="w-11 h-11 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-gold hover:border-gold hover:text-obsidian transition-all duration-300 translate-y-4 group-hover:translate-y-0"
               >
