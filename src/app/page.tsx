@@ -10,6 +10,7 @@ import CollectionReveal from '@/components/landing/CollectionReveal';
 import TestimonialsSection from '@/components/landing/TestimonialsSection';
 import StatementBlock from '@/components/landing/StatementBlock';
 import CTASection from '@/components/landing/CTASection';
+import VideoShowcase from '@/components/landing/VideoShowcase';
 
 const ParticleField = dynamic(
   () => import('@/components/three/ParticleField'),
@@ -28,6 +29,7 @@ export default function HomePage() {
       <FeaturesGrid />
       <ParallaxDivider />
       <ShowcaseSection />
+      <VideoShowcase />
       <CollectionReveal />
       <ParallaxDivider />
       <TestimonialsSection />

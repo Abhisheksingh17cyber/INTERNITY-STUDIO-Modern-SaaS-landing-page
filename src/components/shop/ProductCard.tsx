@@ -21,10 +21,11 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
   const handleAddToCart = (e: React.MouseEvent) => {
     e.preventDefault();
     addItem({
-      id: product._id || product.slug,
+      productId: product._id || product.slug,
       name: product.name,
       price: product.price,
       image: product.images?.[0] || '/placeholder-watch.jpg',
+      slug: product.slug,
       quantity: 1,
     });
   };

@@ -2,6 +2,13 @@
 
 import { useEffect, useRef, useState } from 'react';
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
+declare global {
+  interface Window {
+    google?: any;
+  }
+}
+
 interface GoogleMapProps {
   center?: { lat: number; lng: number };
   zoom?: number;

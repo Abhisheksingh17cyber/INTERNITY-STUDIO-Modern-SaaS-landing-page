@@ -163,8 +163,8 @@ export default function ProductForm({ initialData, onSubmit }: ProductFormProps)
               <label className={labelClass}>Category</label>
               <select value={formData.category} onChange={(e) => update('category', e.target.value)} className={inputClass}>
                 {WATCH_CATEGORIES.map((cat) => (
-                  <option key={cat} value={cat} className="bg-charcoal capitalize">
-                    {cat}
+                  <option key={cat.slug} value={cat.slug} className="bg-charcoal capitalize">
+                    {cat.name}
                   </option>
                 ))}
               </select>

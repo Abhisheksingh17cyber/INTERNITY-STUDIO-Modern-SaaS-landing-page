@@ -10,7 +10,7 @@ import TextReveal from '@/components/animations/TextReveal';
 import ScrollReveal from '@/components/animations/ScrollReveal';
 
 export default function ProductsPage() {
-  const { category, priceRange, search, sortBy } = useFilterStore();
+  const { category, minPrice, maxPrice, search, sort } = useFilterStore();
 
   const filtered = useMemo(() => {
     let products = [...MOCK_PRODUCTS];
@@ -19,9 +19,9 @@ export default function ProductsPage() {
       products = products.filter((p) => p.category === category);
     }
 
-    if (priceRange[0] > 0 || priceRange[1] < 100000) {
+    if (minPrice > 0 || maxPrice < 100000) {
       products = products.filter(
-        (p) => p.price >= priceRange[0] && p.price <= priceRange[1]
+        (p) => p.price >= minPrice && p.price <= maxPrice
       );
     }
 
@@ -35,14 +35,14 @@ export default function ProductsPage() {
       );
     }
 
-    switch (sortBy) {
+    switch (sort) {
       case 'price-asc':
         products.sort((a, b) => a.price - b.price);
         break;
       case 'price-desc':
         products.sort((a, b) => b.price - a.price);
         break;
-      case 'name-asc':
+      case 'name':
         products.sort((a, b) => a.name.localeCompare(b.name));
         break;
       default:
@@ -50,7 +50,7 @@ export default function ProductsPage() {
     }
 
     return products;
-  }, [category, priceRange, search, sortBy]);
+  }, [category, minPrice, maxPrice, search, sort]);
 
   return (
     <section className="section-padding bg-obsidian min-h-screen">

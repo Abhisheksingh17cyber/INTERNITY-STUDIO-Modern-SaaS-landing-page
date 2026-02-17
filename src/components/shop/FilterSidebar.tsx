@@ -7,7 +7,7 @@ import { useState } from 'react';
 
 export default function FilterSidebar() {
   const [open, setOpen] = useState(false);
-  const { category, priceRange, sortBy, setCategory, setPriceRange, setSortBy, resetFilters } = useFilterStore();
+  const { category, minPrice, maxPrice, sort, setCategory, setPriceRange, setSort, resetFilters } = useFilterStore();
 
   const priceRanges = [
     { label: 'All Prices', min: 0, max: 100000 },
@@ -21,7 +21,7 @@ export default function FilterSidebar() {
     { value: 'newest', label: 'Newest' },
     { value: 'price-asc', label: 'Price: Low to High' },
     { value: 'price-desc', label: 'Price: High to Low' },
-    { value: 'name-asc', label: 'Name: A-Z' },
+    { value: 'name', label: 'Name: A-Z' },
   ];
 
   const FilterContent = () => (
@@ -40,13 +40,13 @@ export default function FilterSidebar() {
           </button>
           {WATCH_CATEGORIES.map((cat) => (
             <button
-              key={cat}
-              onClick={() => setCategory(cat)}
+              key={cat.slug}
+              onClick={() => setCategory(cat.slug)}
               className={`block w-full text-left font-body text-sm py-1.5 capitalize transition-colors ${
-                category === cat ? 'text-gold' : 'text-silver/40 hover:text-silver/60'
+                category === cat.slug ? 'text-gold' : 'text-silver/40 hover:text-silver/60'
               }`}
             >
-              {cat}
+              {cat.name}
             </button>
           ))}
         </div>
@@ -59,9 +59,9 @@ export default function FilterSidebar() {
           {priceRanges.map((range) => (
             <button
               key={range.label}
-              onClick={() => setPriceRange([range.min, range.max])}
+              onClick={() => setPriceRange(range.min, range.max)}
               className={`block w-full text-left font-body text-sm py-1.5 transition-colors ${
-                priceRange[0] === range.min && priceRange[1] === range.max
+                minPrice === range.min && maxPrice === range.max
                   ? 'text-gold'
                   : 'text-silver/40 hover:text-silver/60'
               }`}
@@ -79,9 +79,9 @@ export default function FilterSidebar() {
           {sortOptions.map((opt) => (
             <button
               key={opt.value}
-              onClick={() => setSortBy(opt.value)}
+              onClick={() => setSort(opt.value as 'price-asc' | 'price-desc' | 'newest' | 'name')}
               className={`block w-full text-left font-body text-sm py-1.5 transition-colors ${
-                sortBy === opt.value ? 'text-gold' : 'text-silver/40 hover:text-silver/60'
+                sort === opt.value ? 'text-gold' : 'text-silver/40 hover:text-silver/60'
               }`}
             >
               {opt.label}

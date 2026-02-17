@@ -27,7 +27,15 @@ const collectionData: Record<string, { description: string; gradient: string }> 
     description: 'Born from the skies. Pilot watches with precision instruments and bold legibility.',
     gradient: 'from-slate-800/30 via-charcoal to-obsidian',
   },
+  skeleton: {
+    description: 'The art of mechanical beauty revealed. Open-worked dials showcasing the intricate movement within.',
+    gradient: 'from-amber-900/20 via-charcoal to-obsidian',
+  },
   limited: {
+    description: 'Exclusive editions for the distinguished collector. Once they are gone, they are gone forever.',
+    gradient: 'from-gold/20 via-charcoal to-obsidian',
+  },
+  'limited-edition': {
     description: 'Exclusive editions for the distinguished collector. Once they are gone, they are gone forever.',
     gradient: 'from-gold/20 via-charcoal to-obsidian',
   },
@@ -55,14 +63,14 @@ export default function CollectionsPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {WATCH_CATEGORIES.map((cat, i) => {
-            const data = collectionData[cat] || {
+            const data = collectionData[cat.slug] || {
               description: 'Explore this collection of exceptional timepieces.',
               gradient: 'from-charcoal to-obsidian',
             };
             return (
-              <ScrollReveal key={cat} delay={i * 0.1}>
+              <ScrollReveal key={cat.slug} delay={i * 0.1}>
                 <Link
-                  href={`/products?category=${cat}`}
+                  href={`/products?category=${cat.slug}`}
                   className="group block relative aspect-[3/4] bg-charcoal rounded-sm overflow-hidden"
                 >
                   <div className={`absolute inset-0 bg-gradient-to-b ${data.gradient}`} />
@@ -77,7 +85,7 @@ export default function CollectionsPage() {
                   {/* Content */}
                   <div className="absolute bottom-0 left-0 right-0 p-6">
                     <h3 className="font-display text-xl text-gold uppercase tracking-wider mb-2 capitalize">
-                      {cat}
+                      {cat.name}
                     </h3>
                     <p className="font-body text-xs text-silver/30 leading-relaxed line-clamp-2 mb-4">
                       {data.description}

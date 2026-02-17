@@ -43,7 +43,7 @@ export default function ParallaxDivider() {
         },
       }
     );
-  }, containerRef);
+  }, [containerRef]);
 
   return (
     <div ref={containerRef} className="relative h-40 overflow-hidden bg-obsidian">
