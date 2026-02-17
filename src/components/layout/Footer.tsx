@@ -62,7 +62,7 @@ export default function Footer() {
 
             {/* Shop Links */}
             <div>
-              <h4 className="font-display text-gold text-xs tracking-[0.3em] uppercase mb-6 normal-case">
+              <h4 className="font-display text-gold text-xs tracking-[0.3em] uppercase mb-6">
                 Shop
               </h4>
               <ul className="space-y-3">
@@ -81,7 +81,7 @@ export default function Footer() {
 
             {/* Company Links */}
             <div>
-              <h4 className="font-display text-gold text-xs tracking-[0.3em] uppercase mb-6 normal-case">
+              <h4 className="font-display text-gold text-xs tracking-[0.3em] uppercase mb-6">
                 Company
               </h4>
               <ul className="space-y-3">
@@ -100,7 +100,7 @@ export default function Footer() {
 
             {/* Newsletter */}
             <div className="md:col-span-2 lg:col-span-1">
-              <h4 className="font-display text-gold text-xs tracking-[0.3em] uppercase mb-6 normal-case">
+              <h4 className="font-display text-gold text-xs tracking-[0.3em] uppercase mb-6">
                 Newsletter
               </h4>
               <p className="text-silver/40 text-sm mb-4">

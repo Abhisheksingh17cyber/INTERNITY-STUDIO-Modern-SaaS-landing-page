@@ -111,13 +111,13 @@ export default function CartPage() {
 
                 <Link
                   href="/checkout"
-                  className="block w-full h-12 bg-gold text-obsidian font-body text-sm font-semibold tracking-widest uppercase flex items-center justify-center hover:bg-gold/90 transition-colors mb-3"
+                  className="w-full h-12 bg-gold text-obsidian font-body text-sm font-semibold tracking-widest uppercase flex items-center justify-center hover:bg-gold/90 transition-colors mb-3"
                 >
                   Proceed to Checkout
                 </Link>
                 <Link
                   href="/products"
-                  className="block w-full text-center font-body text-xs tracking-[0.3em] uppercase text-silver/40 hover:text-gold transition-colors py-2"
+                  className="w-full text-center font-body text-xs tracking-[0.3em] uppercase text-silver/40 hover:text-gold transition-colors py-2"
                 >
                   Continue Shopping
                 </Link>

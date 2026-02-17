@@ -100,7 +100,7 @@ export default function CollectionsPage() {
 
                   {/* Content */}
                   <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <h3 className="font-display text-xl text-gold uppercase tracking-wider mb-2 capitalize">
+                    <h3 className="font-display text-xl text-gold uppercase tracking-wider mb-2">
                       {cat.name}
                     </h3>
                     <p className="font-body text-xs text-silver/30 leading-relaxed line-clamp-2 mb-4">

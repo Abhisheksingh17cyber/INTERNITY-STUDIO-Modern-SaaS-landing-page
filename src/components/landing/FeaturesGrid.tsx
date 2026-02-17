@@ -37,7 +37,7 @@ export default function FeaturesGrid() {
                   <div className="w-14 h-14 flex items-center justify-center mb-6 border border-gold/20 group-hover:border-gold/40 transition-colors duration-500">
                     <Icon className="w-7 h-7 text-gold/70 group-hover:text-gold transition-colors duration-500" />
                   </div>
-                  <h3 className="font-display text-lg text-gold tracking-wider uppercase mb-3 normal-case">
+                  <h3 className="font-display text-lg text-gold tracking-wider uppercase mb-3">
                     {feature.title}
                   </h3>
                   <p className="text-silver/40 font-body text-sm leading-relaxed">

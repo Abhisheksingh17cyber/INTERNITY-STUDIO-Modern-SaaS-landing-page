@@ -90,7 +90,7 @@ export default function QuickView() {
                   <Link
                     href={`/products/${product.slug}`}
                     onClick={() => setQuickView(null)}
-                    className="block w-full h-11 border border-silver/10 text-silver/50 font-body text-xs tracking-widest uppercase flex items-center justify-center hover:border-gold/30 hover:text-gold transition-colors"
+                    className="w-full h-11 border border-silver/10 text-silver/50 font-body text-xs tracking-widest uppercase flex items-center justify-center hover:border-gold/30 hover:text-gold transition-colors"
                   >
                     View Full Details
                   </Link>
