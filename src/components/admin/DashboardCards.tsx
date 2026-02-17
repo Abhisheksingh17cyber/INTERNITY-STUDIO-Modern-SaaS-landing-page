@@ -1,5 +1,6 @@
 'use client';
 
+import type { LucideIcon } from 'lucide-react';
 import { DollarSign, ShoppingBag, Users, TrendingUp } from 'lucide-react';
 import CountUp from '@/components/animations/CountUp';
 import ScrollReveal from '@/components/animations/ScrollReveal';
@@ -10,7 +11,7 @@ interface DashboardCard {
   prefix?: string;
   suffix?: string;
   change: number;
-  icon: React.ElementType;
+  icon: LucideIcon;
 }
 
 const cards: DashboardCard[] = [
