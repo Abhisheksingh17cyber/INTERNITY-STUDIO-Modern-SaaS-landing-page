@@ -9,5 +9,6 @@
 LICENSE
 
 # Source assets (already copied to public/)
-watches/
-src/Watch_Ad_Video_Generation.mp4
+# Use leading / to only match root-level, NOT public/watches/
+/watches/
+/src/Watch_Ad_Video_Generation.mp4
