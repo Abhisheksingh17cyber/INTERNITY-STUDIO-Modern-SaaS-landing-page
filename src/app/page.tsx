@@ -34,56 +34,88 @@ export default function HomePage() {
       <Preloader />
 
       {/* 1. Cinematic Hero — "Time, Perfected." + radial glow */}
-      <div className="relative">
+      <div className="relative z-[1]">
         <ParticleField />
         <HeroSection />
       </div>
 
       {/* 2. Trust Bar — scrolling press mentions */}
-      <TrustBar />
+      <div className="relative z-[2]">
+        <TrustBar />
+      </div>
 
-      {/* 3. Watch Build — scroll-synced assembly animation */}
-      <WatchBuildAnimation />
+      {/* 3. Watch Build — scroll-synced assembly (PINNED) */}
+      <div className="relative z-[3]">
+        <WatchBuildAnimation />
+      </div>
 
       {/* 4. Features — hover lift + gold border glow cards */}
-      <FeaturesGrid />
+      <div className="relative z-[4]">
+        <FeaturesGrid />
+      </div>
 
       {/* 5. Press Badges — muted silver logos + trust line */}
-      <PressBadges />
+      <div className="relative z-[5]">
+        <PressBadges />
+      </div>
 
-      {/* 6. Showcase — featured products (early exposure) */}
-      <ShowcaseSection />
+      {/* 6. Showcase — featured products (PINNED horizontal scroll) */}
+      <div className="relative z-[6]">
+        <ShowcaseSection />
+      </div>
 
       {/* 7. Problem → Solution — the "why" */}
-      <ProblemSolution />
+      <div className="relative z-[7]">
+        <ProblemSolution />
+      </div>
 
-      <ParallaxDivider />
+      <div className="relative z-[8]">
+        <ParallaxDivider />
+      </div>
 
       {/* 8. Collections — browse by category */}
-      <CollectionReveal />
+      <div className="relative z-[9]">
+        <CollectionReveal />
+      </div>
 
       {/* 9. Limited Editions — scarcity-driven section */}
-      <LimitedEditions />
+      <div className="relative z-[10]">
+        <LimitedEditions />
+      </div>
 
       {/* 10. Video — cinematic brand film */}
-      <VideoShowcase />
+      <div className="relative z-[11]">
+        <VideoShowcase />
+      </div>
 
       {/* 11. Benefits — ownership experience */}
-      <BenefitsSection />
+      <div className="relative z-[12]">
+        <BenefitsSection />
+      </div>
 
-      <ParallaxDivider />
+      <div className="relative z-[13]">
+        <ParallaxDivider />
+      </div>
 
       {/* 12. Heritage — craftsmanship timeline */}
-      <HeritageTimeline />
+      <div className="relative z-[14]">
+        <HeritageTimeline />
+      </div>
 
       {/* 13. Testimonials — collector stories & social proof */}
-      <TestimonialsSection />
+      <div className="relative z-[15]">
+        <TestimonialsSection />
+      </div>
 
       {/* 14. Statement — brand message */}
-      <StatementBlock />
+      <div className="relative z-[16]">
+        <StatementBlock />
+      </div>
 
       {/* 15. Premium CTA — "Own a Legacy." + shimmer */}
-      <CTASection />
+      <div className="relative z-[17]">
+        <CTASection />
+      </div>
     </>
   );
 }
