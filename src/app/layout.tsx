@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { playfairDisplay, inter } from '@/lib/fonts';
+import { playfair, inter } from '@/lib/fonts';
 import SmoothScroll from '@/components/shared/SmoothScroll';
 import CustomCursor from '@/components/shared/CustomCursor';
 import Navbar from '@/components/layout/Navbar';
@@ -44,7 +44,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${playfairDisplay.variable} ${inter.variable}`}>
+    <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
       <body className="bg-obsidian text-silver antialiased">
         <SmoothScroll>
           <CustomCursor />

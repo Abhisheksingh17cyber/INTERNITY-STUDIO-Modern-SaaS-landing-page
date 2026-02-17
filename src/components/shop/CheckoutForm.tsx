@@ -139,7 +139,7 @@ export default function CheckoutForm() {
                   <h2 className="font-display text-xl text-silver uppercase tracking-wider mb-8">Review Order</h2>
                   <div className="space-y-4 mb-8">
                     {items.map((item) => (
-                      <div key={item.id} className="flex justify-between items-center py-3 border-b border-silver/5">
+                      <div key={item.productId} className="flex justify-between items-center py-3 border-b border-silver/5">
                         <div>
                           <span className="font-body text-sm text-silver">{item.name}</span>
                           <span className="text-silver/30 text-xs ml-2">x{item.quantity}</span>
@@ -176,7 +176,7 @@ export default function CheckoutForm() {
                   <h3 className="font-display text-lg text-silver uppercase tracking-wider mb-6">Order Summary</h3>
                   <div className="space-y-3 mb-6">
                     {items.map((item) => (
-                      <div key={item.id} className="flex justify-between text-sm">
+                      <div key={item.productId} className="flex justify-between text-sm">
                         <span className="font-body text-silver/50">{item.name} x{item.quantity}</span>
                         <span className="font-body text-silver/60">{formatPrice(item.price * item.quantity)}</span>
                       </div>

@@ -34,7 +34,7 @@ export default function DashboardCards() {
             </div>
             <div className="font-display text-2xl text-silver mb-2">
               {card.prefix}
-              <CountUp target={card.value} />
+              <CountUp end={card.value} />
               {card.suffix}
             </div>
             <span

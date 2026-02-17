@@ -62,7 +62,7 @@ export default function CartDrawer() {
                 </div>
               ) : (
                 items.map((item) => (
-                  <div key={item.id} className="flex gap-4">
+                  <div key={item.productId} className="flex gap-4">
                     <div className="w-20 h-20 bg-charcoal rounded-sm overflow-hidden flex-shrink-0">
                       {item.image && item.image !== '/placeholder-watch.jpg' ? (
                         <Image src={item.image} alt={item.name} width={80} height={80} className="object-cover w-full h-full" />
@@ -80,14 +80,14 @@ export default function CartDrawer() {
                       <div className="flex items-center justify-between mt-3">
                         <div className="flex items-center border border-silver/10 rounded-sm">
                           <button
-                            onClick={() => updateQuantity(item.id, Math.max(1, item.quantity - 1))}
+                            onClick={() => updateQuantity(item.productId, Math.max(1, item.quantity - 1))}
                             className="w-7 h-7 flex items-center justify-center text-silver/40 hover:text-gold transition-colors"
                           >
                             <Minus className="w-3 h-3" />
                           </button>
                           <span className="w-8 text-center font-body text-silver text-xs">{item.quantity}</span>
                           <button
-                            onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                            onClick={() => updateQuantity(item.productId, item.quantity + 1)}
                             className="w-7 h-7 flex items-center justify-center text-silver/40 hover:text-gold transition-colors"
                           >
                             <Plus className="w-3 h-3" />
@@ -95,7 +95,7 @@ export default function CartDrawer() {
                         </div>
 
                         <button
-                          onClick={() => removeItem(item.id)}
+                          onClick={() => removeItem(item.productId)}
                           className="text-silver/20 hover:text-red-500 transition-colors"
                         >
                           <Trash2 className="w-4 h-4" />

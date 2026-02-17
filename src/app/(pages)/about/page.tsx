@@ -64,7 +64,7 @@ export default function AboutPage() {
               <ScrollReveal key={stat.label} delay={i * 0.1}>
                 <div className="text-center">
                   <div className="font-display text-3xl md:text-4xl text-gold mb-2">
-                    <CountUp target={stat.value} />
+                    <CountUp end={stat.value} />
                     {stat.suffix}
                   </div>
                   <span className="font-body text-xs tracking-[0.3em] uppercase text-silver/30">{stat.label}</span>

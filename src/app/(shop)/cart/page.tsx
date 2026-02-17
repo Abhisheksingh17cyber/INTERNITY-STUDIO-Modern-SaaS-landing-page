@@ -42,7 +42,7 @@ export default function CartPage() {
           {/* Cart Items */}
           <div className="lg:col-span-2 space-y-6">
             {items.map((item, i) => (
-              <ScrollReveal key={item.id} delay={i * 0.1}>
+              <ScrollReveal key={item.productId} delay={i * 0.1}>
                 <div className="flex gap-6 p-6 bg-charcoal-dark rounded-sm">
                   <div className="w-24 h-24 bg-charcoal rounded-sm overflow-hidden flex-shrink-0">
                     {item.image && item.image !== '/placeholder-watch.jpg' ? (
@@ -61,14 +61,14 @@ export default function CartPage() {
                     <div className="flex items-center justify-between">
                       <div className="flex items-center border border-silver/10 rounded-sm">
                         <button
-                          onClick={() => updateQuantity(item.id, Math.max(1, item.quantity - 1))}
+                          onClick={() => updateQuantity(item.productId, Math.max(1, item.quantity - 1))}
                           className="w-9 h-9 flex items-center justify-center text-silver/40 hover:text-gold transition-colors"
                         >
                           <Minus className="w-4 h-4" />
                         </button>
                         <span className="w-10 text-center font-body text-silver text-sm">{item.quantity}</span>
                         <button
-                          onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                          onClick={() => updateQuantity(item.productId, item.quantity + 1)}
                           className="w-9 h-9 flex items-center justify-center text-silver/40 hover:text-gold transition-colors"
                         >
                           <Plus className="w-4 h-4" />
@@ -78,7 +78,7 @@ export default function CartPage() {
                       <div className="flex items-center gap-4">
                         <span className="font-body text-silver">{formatPrice(item.price * item.quantity)}</span>
                         <button
-                          onClick={() => removeItem(item.id)}
+                          onClick={() => removeItem(item.productId)}
                           className="text-silver/20 hover:text-red-500 transition-colors"
                         >
                           <Trash2 className="w-4 h-4" />
