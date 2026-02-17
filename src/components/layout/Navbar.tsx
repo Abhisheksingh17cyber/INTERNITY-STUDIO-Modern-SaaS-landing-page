@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ShoppingBag, Menu, X, Watch } from 'lucide-react';
+import { ShoppingBag, Menu, X, Watch, ArrowRight } from 'lucide-react';
 import { NAV_LINKS } from '@/lib/constants';
 import { useCartStore } from '@/stores/cartStore';
 import { useUIStore } from '@/stores/uiStore';
@@ -66,6 +66,14 @@ export default function Navbar() {
 
           {/* Actions */}
           <div className="flex items-center gap-6">
+            <Link
+              href="/products"
+              className="hidden md:inline-flex items-center gap-2 px-5 py-2 bg-gold text-obsidian text-xs tracking-[0.15em] uppercase font-body font-semibold hover:bg-gold-light transition-colors duration-300"
+              data-cursor="expand"
+            >
+              Shop Now
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
             <button
               onClick={openCart}
               className="relative p-2 text-silver/70 hover:text-gold transition-colors"

@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { gsap, ScrollTrigger, registerGSAPPlugins, splitTextIntoSpans } from '@/lib/gsap';
 import MagneticButton from '@/components/animations/MagneticButton';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Calendar } from 'lucide-react';
 
 registerGSAPPlugins();
 
@@ -143,7 +143,7 @@ export default function HeroSection() {
           <div className="flex flex-col justify-center">
             <div className="mb-4">
               <span className="font-body text-xs tracking-[0.4em] uppercase text-gold/60 block mb-4">
-                Swiss Craftsmanship Since 1947
+                Master Watchmakers · Geneva, Since 1947
               </span>
             </div>
 
@@ -151,14 +151,14 @@ export default function HeroSection() {
               ref={headingRef}
               className="text-hero font-display font-bold text-gold leading-[0.9] tracking-wider uppercase mb-4 md:mb-6"
             >
-              Own a Legacy on Your Wrist
+              Wear More Than a Watch — Wear a Legacy
             </h1>
 
             <p
               ref={taglineRef}
               className="font-display text-lg md:text-2xl text-gold-light/80 tracking-wide mb-4 md:mb-6"
             >
-              Exclusive Swiss Timepieces — Limited Edition Releases
+              Limited editions from master watchmakers. Exclusivity you can feel.
             </p>
 
             <p
@@ -166,20 +166,21 @@ export default function HeroSection() {
               className="text-silver-dark font-body text-base md:text-lg leading-relaxed max-w-lg mb-8 md:mb-10"
             >
               312 hand-finished components. 72-hour power reserve. COSC-certified precision. 
-              Each Internity timepiece is assembled by a single master watchmaker in our 
-              Swiss atelier — so no two are ever identical.
+              Each Internity timepiece is assembled by a single master watchmaker — 
+              so no two are ever identical.
             </p>
 
             <div ref={ctaRef} className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 md:mb-10">
               <Link href="/products">
                 <MagneticButton className="w-full sm:w-auto text-sm md:text-base px-6 md:px-8 py-3.5 md:py-4 bg-gold text-obsidian font-semibold hover:bg-gold-light transition-colors">
-                  Shop the Collection
+                  Shop The Collection
                   <ArrowRight className="w-4 h-4 ml-2 inline" />
                 </MagneticButton>
               </Link>
-              <Link href="/products">
+              <Link href="/contact">
                 <MagneticButton className="w-full sm:w-auto bg-transparent border border-gold/30 text-gold hover:bg-gold/10 hover:border-gold/60 text-sm md:text-base px-6 md:px-8 py-3.5 md:py-4">
-                  Join the Waitlist
+                  <Calendar className="w-4 h-4 mr-2 inline" />
+                  Book a Private Viewing
                 </MagneticButton>
               </Link>
             </div>

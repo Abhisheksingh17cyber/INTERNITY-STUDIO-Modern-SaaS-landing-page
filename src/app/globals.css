@@ -8,15 +8,15 @@
 :root {
   --primary-font: "Playfair Display", serif;
   --body-font: "Inter", sans-serif;
-  --bg-color: #0d0e10;
-  --bg-secondary: #141517;
+  --bg-color: #0c0c0e;
+  --bg-secondary: #1a1a1f;
   --text-gold: #c6a75e;
   --text-gold-dark: #a68b3e;
   --text-gold-light: #e6c77a;
-  --text-silver: #f7f7f7;
+  --text-silver: #f5f5f5;
   --text-silver-dark: #b8b8b8;
-  --accent-gray: #141517;
-  --accent-gray-light: #1e1f22;
+  --accent-gray: #1a1a1f;
+  --accent-gray-light: #22222a;
 }
 
 /* ═══════════════════════════════════════════
@@ -68,12 +68,12 @@
 
   ::selection {
     background-color: rgba(198, 167, 94, 0.3);
-    color: #f7f7f7;
+    color: #f5f5f5;
   }
 
   ::-moz-selection {
     background-color: rgba(198, 167, 94, 0.3);
-    color: #f7f7f7;
+    color: #f5f5f5;
   }
 }
 
@@ -85,7 +85,7 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #0d0e10;
+  background: #0c0c0e;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -100,7 +100,7 @@
 /* Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #c6a75e #0d0e10;
+  scrollbar-color: #c6a75e #0c0c0e;
 }
 
 /* ═══════════════════════════════════════════
@@ -117,7 +117,7 @@
   .glass-morphism {
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    background: rgba(13, 14, 16, 0.8);
+    background: rgba(12, 12, 14, 0.8);
     border: 1px solid rgba(198, 167, 94, 0.1);
   }
 
@@ -139,7 +139,7 @@
   }
 
   .section-alt {
-    background-color: #141517;
+    background-color: #1a1a1f;
   }
 
   .section-padding {
@@ -177,7 +177,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #0d0e10;
+  background: #0c0c0e;
 }
 
 .preloader-hidden {

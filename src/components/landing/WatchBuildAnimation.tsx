@@ -138,7 +138,7 @@ export default function WatchBuildAnimation() {
                   fill="none"
                 >
                   <circle cx="200" cy="200" r="155" stroke="#C6A75E" strokeWidth="0.5" opacity="0.3" />
-                  <circle cx="200" cy="200" r="140" fill="#141517" stroke="#C6A75E" strokeWidth="0.5" opacity="0.8" />
+                  <circle cx="200" cy="200" r="140" fill="#1A1A1F" stroke="#C6A75E" strokeWidth="0.5" opacity="0.8" />
                   {/* Hour indices */}
                   {Array.from({ length: 12 }).map((_, i) => {
                     const angle = (i * 30 - 90) * (Math.PI / 180);
@@ -197,7 +197,7 @@ export default function WatchBuildAnimation() {
                   <line x1="200" y1="220" x2="200" y2="85" stroke="#E6C77A" strokeWidth="0.8" opacity="0.4" />
                   {/* Center pinion */}
                   <circle cx="200" cy="200" r="5" fill="#C6A75E" opacity="0.8" />
-                  <circle cx="200" cy="200" r="3" fill="#0D0E10" />
+                  <circle cx="200" cy="200" r="3" fill="#0C0C0E" />
                 </svg>
 
                 {/* Part 5: Crown */}

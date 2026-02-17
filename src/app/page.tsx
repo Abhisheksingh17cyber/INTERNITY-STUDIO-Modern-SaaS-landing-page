@@ -37,30 +37,30 @@ export default function HomePage() {
         <HeroSection />
       </div>
 
-      {/* 2. Trust Bar — social proof logos & stats */}
+      {/* 2. Trust Bar — instant credibility */}
       <TrustBar />
 
-      {/* 3. Problem → Solution — the "why" before features */}
+      {/* 3. Showcase — featured products (early product exposure) */}
+      <ShowcaseSection />
+
+      {/* 4. Problem → Solution — the "why" */}
       <ProblemSolution />
 
       <ParallaxDivider />
 
-      {/* 4. Features — "Why Choose Internity" */}
+      {/* 5. Features — "Why Choose Internity" */}
       <FeaturesGrid />
 
-      {/* 5. Benefits — ownership experience */}
-      <BenefitsSection />
-
-      <ParallaxDivider />
-
-      {/* 6. Showcase — featured products horizontal scroll */}
-      <ShowcaseSection />
+      {/* 6. Collections — browse by category */}
+      <CollectionReveal />
 
       {/* 7. Video — cinematic brand film */}
       <VideoShowcase />
 
-      {/* 8. Collections — browse by category */}
-      <CollectionReveal />
+      {/* 8. Benefits — ownership experience */}
+      <BenefitsSection />
+
+      <ParallaxDivider />
 
       {/* 9. Watch Build — scroll-synced assembly animation */}
       <WatchBuildAnimation />
@@ -68,15 +68,13 @@ export default function HomePage() {
       {/* 10. Heritage — craftsmanship timeline */}
       <HeritageTimeline />
 
-      <ParallaxDivider />
-
-      {/* 11. Testimonials — collector stories */}
+      {/* 11. Testimonials — collector stories & social proof */}
       <TestimonialsSection />
 
       {/* 12. Statement — brand message */}
       <StatementBlock />
 
-      {/* 13. Final CTA */}
+      {/* 13. Final CTA — conversion close */}
       <CTASection />
     </>
   );
