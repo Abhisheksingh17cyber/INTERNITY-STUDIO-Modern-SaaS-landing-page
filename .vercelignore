@@ -1,0 +1,13 @@
+# INTERNITY-WATCHES — Vercel Ignore
+# These files are not needed for the Vercel build
+
+# Development files
+.vscode/
+.env.local
+.env.local.example
+*.md
+LICENSE
+
+# Source assets (already copied to public/)
+watches/
+src/Watch_Ad_Video_Generation.mp4

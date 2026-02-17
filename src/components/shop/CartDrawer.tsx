@@ -113,7 +113,7 @@ export default function CartDrawer() {
                 <Link
                   href="/checkout"
                   onClick={toggleCart}
-                  className="w-full h-12 bg-gold text-obsidian font-body text-sm font-semibold tracking-widest uppercase flex items-center justify-center hover:bg-gold/90 transition-colors"
+                  className="w-full h-12 bg-gold text-obsidian font-body text-sm font-semibold tracking-widest uppercase inline-flex items-center justify-center hover:bg-gold/90 transition-colors"
                 >
                   Checkout
                 </Link>
