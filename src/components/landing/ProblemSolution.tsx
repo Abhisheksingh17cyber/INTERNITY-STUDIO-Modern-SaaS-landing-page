@@ -107,7 +107,7 @@ export default function ProblemSolution() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="section-padding bg-charcoal-dark relative overflow-hidden">
+    <section ref={sectionRef} className="section-padding bg-charcoal relative overflow-hidden">
       {/* Background accent */}
       <div className="absolute top-0 left-0 w-1/3 h-full bg-gradient-to-r from-red-900/[0.03] to-transparent" />
       <div className="absolute bottom-0 right-0 w-1/3 h-full bg-gradient-to-l from-gold/[0.03] to-transparent" />
@@ -138,7 +138,7 @@ export default function ProblemSolution() {
                 <h3 className="font-display text-base md:text-lg text-silver/70 tracking-wider mb-3 normal-case">
                   {problem.title}
                 </h3>
-                <p className="text-silver/30 font-body text-sm leading-relaxed">
+                <p className="text-silver-dark/50 font-body text-sm leading-relaxed">
                   {problem.description}
                 </p>
               </div>
@@ -169,7 +169,7 @@ export default function ProblemSolution() {
                 <h3 className="font-display text-base md:text-lg text-gold tracking-wider mb-3 normal-case">
                   {solution.title}
                 </h3>
-                <p className="text-silver/40 font-body text-sm leading-relaxed">
+                <p className="text-silver-dark/70 font-body text-sm leading-relaxed">
                   {solution.description}
                 </p>
               </div>

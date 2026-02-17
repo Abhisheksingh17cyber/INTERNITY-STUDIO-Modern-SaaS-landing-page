@@ -115,7 +115,7 @@ export default function BenefitsSection() {
           <TextReveal as="h2" className="text-3xl md:text-5xl lg:text-6xl font-display font-bold text-gold tracking-wider uppercase mb-6">
             The Ownership Experience
           </TextReveal>
-          <p className="text-silver/40 font-body text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
+          <p className="text-silver-dark/70 font-body text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
             When you choose Internity, you don&apos;t just buy a watch. You join a circle of collectors 
             who demand — and receive — the extraordinary.
           </p>
@@ -129,11 +129,13 @@ export default function BenefitsSection() {
               return (
                 <div
                   key={benefit.title}
-                  className="benefit-card group bg-charcoal p-6 md:p-8 gold-border-glow hover-lift cursor-default"
+                  className="benefit-card group relative bg-charcoal p-6 md:p-8 gold-border-glow hover-lift cursor-default overflow-hidden"
                 >
+                  {/* Shimmer overlay on hover */}
+                  <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-gold/[0.04] to-transparent pointer-events-none" />
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 flex items-center justify-center border border-gold/20 group-hover:border-gold/40 transition-colors duration-500">
-                      <Icon className="w-5 h-5 text-gold/60 group-hover:text-gold transition-colors duration-500" />
+                    <div className="w-10 h-10 flex items-center justify-center border border-gold/20 group-hover:border-gold/40 group-hover:bg-gold/[0.05] transition-all duration-500">
+                      <Icon className="w-5 h-5 text-gold/60 group-hover:text-gold group-hover:scale-110 transition-all duration-500" />
                     </div>
                     <div>
                       <span className="font-display text-lg text-gold">{benefit.stat}</span>
@@ -143,7 +145,7 @@ export default function BenefitsSection() {
                   <h3 className="font-display text-base text-gold/90 tracking-wider mb-2 normal-case">
                     {benefit.title}
                   </h3>
-                  <p className="text-silver/35 font-body text-sm leading-relaxed">
+                  <p className="text-silver-dark/60 font-body text-sm leading-relaxed">
                     {benefit.description}
                   </p>
                 </div>

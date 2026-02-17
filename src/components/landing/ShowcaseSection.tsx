@@ -12,7 +12,7 @@ export default function ShowcaseSection() {
   const featured = MOCK_PRODUCTS.filter((p) => p.featured);
 
   return (
-    <section className="bg-charcoal-dark relative">
+    <section className="bg-charcoal relative">
       {/* Section header */}
       <div className="section-padding pb-0">
         <div className="container-luxury text-center">
@@ -66,7 +66,7 @@ export default function ShowcaseSection() {
                   <h3 className="font-display text-2xl md:text-3xl text-gold tracking-wider uppercase mb-4">
                     {product.name}
                   </h3>
-                  <p className="text-silver/40 font-body text-sm leading-relaxed mb-6 line-clamp-3">
+                  <p className="text-silver-dark/70 font-body text-sm leading-relaxed mb-6 line-clamp-3">
                     {product.description}
                   </p>
                   <div className="flex items-center gap-6">

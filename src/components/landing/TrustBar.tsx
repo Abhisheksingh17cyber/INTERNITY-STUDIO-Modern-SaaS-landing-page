@@ -66,7 +66,7 @@ export default function TrustBar() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-obsidian border-y border-gold/5 py-10 md:py-14 overflow-hidden">
+    <section ref={sectionRef} className="bg-charcoal border-y border-gold/10 py-10 md:py-14 overflow-hidden">
       <div className="container-luxury mb-8 md:mb-10">
         <p className="text-center font-body text-[10px] md:text-xs tracking-[0.4em] uppercase text-silver/20 mb-6">
           As Featured In

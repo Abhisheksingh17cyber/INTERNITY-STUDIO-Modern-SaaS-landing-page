@@ -14,6 +14,12 @@ import TestimonialsSection from '@/components/landing/TestimonialsSection';
 import VideoShowcase from '@/components/landing/VideoShowcase';
 import StatementBlock from '@/components/landing/StatementBlock';
 import CTASection from '@/components/landing/CTASection';
+import HeritageTimeline from '@/components/landing/HeritageTimeline';
+
+const WatchBuildAnimation = dynamic(
+  () => import('@/components/landing/WatchBuildAnimation'),
+  { ssr: false }
+);
 
 const ParticleField = dynamic(
   () => import('@/components/three/ParticleField'),
@@ -56,15 +62,21 @@ export default function HomePage() {
       {/* 8. Collections — browse by category */}
       <CollectionReveal />
 
+      {/* 9. Watch Build — scroll-synced assembly animation */}
+      <WatchBuildAnimation />
+
+      {/* 10. Heritage — craftsmanship timeline */}
+      <HeritageTimeline />
+
       <ParallaxDivider />
 
-      {/* 9. Testimonials — collector stories */}
+      {/* 11. Testimonials — collector stories */}
       <TestimonialsSection />
 
-      {/* 10. Statement — brand message */}
+      {/* 12. Statement — brand message */}
       <StatementBlock />
 
-      {/* 11. Final CTA */}
+      {/* 13. Final CTA */}
       <CTASection />
     </>
   );

@@ -9,20 +9,20 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        obsidian: '#050505',
+        obsidian: '#0D0E10',
         gold: {
-          DEFAULT: '#D4AF37',
-          dark: '#B8960C',
-          light: '#E8C84A',
+          DEFAULT: '#C6A75E',
+          dark: '#A68B3E',
+          light: '#E6C77A',
         },
         silver: {
-          DEFAULT: '#E5E4E2',
-          dark: '#C0BFBD',
+          DEFAULT: '#F7F7F7',
+          dark: '#B8B8B8',
         },
         charcoal: {
-          DEFAULT: '#1A1A1A',
-          light: '#2A2A2A',
-          dark: '#111111',
+          DEFAULT: '#141517',
+          light: '#1E1F22',
+          dark: '#0A0B0D',
         },
       },
       fontFamily: {
@@ -40,6 +40,7 @@ const config: Config = {
         'glow-pulse': 'glowPulse 2s ease-in-out infinite',
         'spin-slow': 'spin 20s linear infinite',
         'float': 'float 6s ease-in-out infinite',
+        'shimmer': 'shimmer 2.5s ease-in-out infinite',
       },
       keyframes: {
         fadeIn: {
@@ -51,12 +52,16 @@ const config: Config = {
           '100%': { opacity: '1', transform: 'translateY(0)' },
         },
         glowPulse: {
-          '0%, 100%': { boxShadow: '0 0 20px rgba(212, 175, 55, 0.3)' },
-          '50%': { boxShadow: '0 0 40px rgba(212, 175, 55, 0.6)' },
+          '0%, 100%': { boxShadow: '0 0 20px rgba(198, 167, 94, 0.3)' },
+          '50%': { boxShadow: '0 0 40px rgba(198, 167, 94, 0.6)' },
         },
         float: {
           '0%, 100%': { transform: 'translateY(0px)' },
           '50%': { transform: 'translateY(-20px)' },
+        },
+        shimmer: {
+          '0%': { backgroundPosition: '-200% 0' },
+          '100%': { backgroundPosition: '200% 0' },
         },
       },
       spacing: {
@@ -72,8 +77,9 @@ const config: Config = {
         'luxury': 'cubic-bezier(0.16, 1, 0.3, 1)',
       },
       backgroundImage: {
-        'gold-gradient': 'linear-gradient(135deg, #D4AF37 0%, #E8C84A 50%, #D4AF37 100%)',
-        'obsidian-gradient': 'linear-gradient(180deg, #050505 0%, #1A1A1A 100%)',
+        'gold-gradient': 'linear-gradient(135deg, #C6A75E 0%, #E6C77A 50%, #C6A75E 100%)',
+        'obsidian-gradient': 'linear-gradient(180deg, #0D0E10 0%, #141517 100%)',
+        'shimmer-gradient': 'linear-gradient(90deg, transparent 0%, rgba(198,167,94,0.08) 50%, transparent 100%)',
       },
     },
   },

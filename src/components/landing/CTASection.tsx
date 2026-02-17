@@ -42,7 +42,9 @@ export default function CTASection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="section-padding bg-charcoal-dark relative overflow-hidden">
+    <section ref={sectionRef} className="section-padding bg-obsidian relative overflow-hidden">
+      {/* Top gold accent line */}
+      <div className="absolute top-0 left-1/4 right-1/4 h-[1px] bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
       {/* Background glow */}
       <div ref={glowRef} className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gold/[0.04] rounded-full blur-[120px]" />
       
@@ -55,7 +57,7 @@ export default function CTASection() {
             <TextReveal as="h2" className="text-3xl md:text-5xl lg:text-6xl font-display font-bold text-gold tracking-wider uppercase mb-4 md:mb-6">
               Your Legacy Starts Now
             </TextReveal>
-            <p className="text-silver/40 font-body text-base md:text-lg max-w-xl mx-auto mb-4 leading-relaxed">
+            <p className="text-silver-dark/70 font-body text-base md:text-lg max-w-xl mx-auto mb-4 leading-relaxed">
               Join 12,000+ collectors who chose to wear something extraordinary. 
               Every Internity watch ships with complimentary engraving and a lifetime warranty.
             </p>

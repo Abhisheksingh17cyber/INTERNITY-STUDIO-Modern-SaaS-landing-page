@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { gsap, ScrollTrigger, registerGSAPPlugins, splitTextIntoSpans } from '@/lib/gsap';
 import MagneticButton from '@/components/animations/MagneticButton';
-import { ArrowRight, Play } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 registerGSAPPlugins();
 
@@ -156,14 +156,14 @@ export default function HeroSection() {
 
             <p
               ref={taglineRef}
-              className="font-display text-lg md:text-2xl text-gold/70 tracking-wide mb-4 md:mb-6"
+              className="font-display text-lg md:text-2xl text-gold-light/80 tracking-wide mb-4 md:mb-6"
             >
-              Because mass-produced watches can&apos;t tell your story.
+              Exclusive Swiss Timepieces — Limited Edition Releases
             </p>
 
             <p
               ref={subRef}
-              className="text-silver/60 font-body text-base md:text-lg leading-relaxed max-w-lg mb-8 md:mb-10"
+              className="text-silver-dark font-body text-base md:text-lg leading-relaxed max-w-lg mb-8 md:mb-10"
             >
               312 hand-finished components. 72-hour power reserve. COSC-certified precision. 
               Each Internity timepiece is assembled by a single master watchmaker in our 
@@ -172,15 +172,14 @@ export default function HeroSection() {
 
             <div ref={ctaRef} className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 md:mb-10">
               <Link href="/products">
-                <MagneticButton className="w-full sm:w-auto text-sm md:text-base px-6 md:px-8 py-3.5 md:py-4">
+                <MagneticButton className="w-full sm:w-auto text-sm md:text-base px-6 md:px-8 py-3.5 md:py-4 bg-gold text-obsidian font-semibold hover:bg-gold-light transition-colors">
                   Shop the Collection
                   <ArrowRight className="w-4 h-4 ml-2 inline" />
                 </MagneticButton>
               </Link>
-              <Link href="/about">
+              <Link href="/products">
                 <MagneticButton className="w-full sm:w-auto bg-transparent border border-gold/30 text-gold hover:bg-gold/10 hover:border-gold/60 text-sm md:text-base px-6 md:px-8 py-3.5 md:py-4">
-                  <Play className="w-3.5 h-3.5 mr-2 inline" />
-                  Our Story
+                  Join the Waitlist
                 </MagneticButton>
               </Link>
             </div>
@@ -189,15 +188,15 @@ export default function HeroSection() {
             <div ref={statsRef} className="flex flex-wrap gap-6 md:gap-8 border-t border-gold/10 pt-6">
               <div>
                 <span className="font-display text-xl md:text-2xl text-gold">75+</span>
-                <span className="block font-body text-[10px] md:text-xs tracking-[0.2em] uppercase text-silver/30 mt-1">Years Heritage</span>
+                <span className="block font-body text-[10px] md:text-xs tracking-[0.2em] uppercase text-silver-dark/60 mt-1">Years Heritage</span>
               </div>
               <div>
                 <span className="font-display text-xl md:text-2xl text-gold">12K+</span>
-                <span className="block font-body text-[10px] md:text-xs tracking-[0.2em] uppercase text-silver/30 mt-1">Collectors</span>
+                <span className="block font-body text-[10px] md:text-xs tracking-[0.2em] uppercase text-silver-dark/60 mt-1">Collectors</span>
               </div>
               <div>
                 <span className="font-display text-xl md:text-2xl text-gold">99.8%</span>
-                <span className="block font-body text-[10px] md:text-xs tracking-[0.2em] uppercase text-silver/30 mt-1">Precision Rate</span>
+                <span className="block font-body text-[10px] md:text-xs tracking-[0.2em] uppercase text-silver-dark/60 mt-1">Precision Rate</span>
               </div>
             </div>
           </div>

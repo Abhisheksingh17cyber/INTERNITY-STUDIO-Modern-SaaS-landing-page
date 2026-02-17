@@ -4,7 +4,7 @@ import TextReveal from '@/components/animations/TextReveal';
 
 export default function StatementBlock() {
   return (
-    <section className="section-padding bg-obsidian relative overflow-hidden">
+    <section className="section-padding bg-charcoal relative overflow-hidden">
       {/* Subtle background texture */}
       <div className="absolute inset-0 opacity-[0.02]" style={{
         backgroundImage: `radial-gradient(circle at 1px 1px, rgba(212,175,55,0.5) 1px, transparent 0)`,
@@ -28,7 +28,7 @@ export default function StatementBlock() {
           <TextReveal
             as="p"
             type="words"
-            className="text-silver/40 font-body text-lg md:text-xl max-w-2xl mx-auto leading-relaxed"
+            className="text-silver-dark/70 font-body text-lg md:text-xl max-w-2xl mx-auto leading-relaxed"
             delay={0.3}
           >
             In a world that moves ever faster, an Internity timepiece is your invitation to pause, appreciate, and savor the extraordinary craftsmanship of every passing second.

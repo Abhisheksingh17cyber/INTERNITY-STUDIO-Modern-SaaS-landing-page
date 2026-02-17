@@ -58,7 +58,7 @@ export default function CollectionReveal() {
                   <h3 className="font-display text-2xl md:text-3xl text-gold tracking-wider uppercase mb-2">
                     {collection.name}
                   </h3>
-                  <p className="text-silver/40 font-body text-sm mb-4">
+                  <p className="text-silver-dark/70 font-body text-sm mb-4">
                     {collection.description}
                   </p>
                   <span className="font-body text-xs tracking-[0.2em] uppercase text-gold/40 group-hover:text-gold transition-colors duration-300">
