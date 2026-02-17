@@ -9,7 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        obsidian: '#0C0C0E',
+        obsidian: '#0D0D0D',
         gold: {
           DEFAULT: '#C6A75E',
           dark: '#A68B3E',
@@ -20,9 +20,9 @@ const config: Config = {
           dark: '#B8B8B8',
         },
         charcoal: {
-          DEFAULT: '#1A1A1F',
-          light: '#22222A',
-          dark: '#0E0E12',
+          DEFAULT: '#1D1D1D',
+          light: '#272730',
+          dark: '#131316',
         },
       },
       fontFamily: {
@@ -78,7 +78,7 @@ const config: Config = {
       },
       backgroundImage: {
         'gold-gradient': 'linear-gradient(135deg, #C6A75E 0%, #E6C77A 50%, #C6A75E 100%)',
-        'obsidian-gradient': 'linear-gradient(180deg, #0C0C0E 0%, #1A1A1F 100%)',
+        'obsidian-gradient': 'linear-gradient(180deg, #0D0D0D 0%, #1D1D1D 100%)',
         'shimmer-gradient': 'linear-gradient(90deg, transparent 0%, rgba(198,167,94,0.08) 50%, transparent 100%)',
       },
     },

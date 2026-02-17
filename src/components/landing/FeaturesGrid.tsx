@@ -11,9 +11,11 @@ const iconMap: Record<string, LucideIcon> = {
 
 export default function FeaturesGrid() {
   return (
-    <section className="section-padding bg-charcoal relative">
+    <section className="section-padding bg-charcoal relative overflow-hidden">
       {/* Left accent line */}
       <div className="absolute left-0 top-20 bottom-20 w-[2px] bg-gradient-to-b from-transparent via-gold/20 to-transparent" />
+      {/* Subtle radial glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gold/[0.02] rounded-full blur-[200px] pointer-events-none" />
       <div className="container-luxury">
         {/* Section Header */}
         <div className="text-center mb-20">
@@ -33,7 +35,7 @@ export default function FeaturesGrid() {
               return (
                 <div
                   key={feature.title}
-                  className="group relative bg-charcoal p-8 md:p-10 gold-border-glow hover-lift cursor-default overflow-hidden"
+                  className="group relative bg-charcoal p-8 md:p-10 gold-border-glow hover-lift cursor-default overflow-hidden border border-[rgba(255,255,255,0.08)] hover:border-gold/30 transition-all duration-500"
                   data-cursor="expand"
                 >
                   {/* Shimmer overlay on hover */}

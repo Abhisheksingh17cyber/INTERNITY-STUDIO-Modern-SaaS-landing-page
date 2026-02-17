@@ -93,6 +93,7 @@ export default function VideoShowcase() {
   return (
     <section
       ref={sectionRef}
+      id="video-showcase"
       className="relative h-[80vh] md:h-screen overflow-hidden bg-obsidian"
     >
       {/* Video */}

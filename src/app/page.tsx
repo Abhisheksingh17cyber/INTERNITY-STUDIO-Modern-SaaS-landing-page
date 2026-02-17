@@ -4,12 +4,14 @@ import dynamic from 'next/dynamic';
 import Preloader from '@/components/landing/Preloader';
 import HeroSection from '@/components/landing/HeroSection';
 import TrustBar from '@/components/landing/TrustBar';
+import PressBadges from '@/components/landing/PressBadges';
 import ProblemSolution from '@/components/landing/ProblemSolution';
 import FeaturesGrid from '@/components/landing/FeaturesGrid';
 import BenefitsSection from '@/components/landing/BenefitsSection';
 import ParallaxDivider from '@/components/landing/ParallaxDivider';
 import ShowcaseSection from '@/components/landing/ShowcaseSection';
 import CollectionReveal from '@/components/landing/CollectionReveal';
+import LimitedEditions from '@/components/landing/LimitedEditions';
 import TestimonialsSection from '@/components/landing/TestimonialsSection';
 import VideoShowcase from '@/components/landing/VideoShowcase';
 import StatementBlock from '@/components/landing/StatementBlock';
@@ -31,50 +33,56 @@ export default function HomePage() {
     <>
       <Preloader />
 
-      {/* 1. Hero — strong value prop + CTA above fold */}
+      {/* 1. Cinematic Hero — "Time, Perfected." + radial glow */}
       <div className="relative">
         <ParticleField />
         <HeroSection />
       </div>
 
-      {/* 2. Trust Bar — instant credibility */}
+      {/* 2. Trust Bar — scrolling press mentions */}
       <TrustBar />
 
-      {/* 3. Showcase — featured products (early product exposure) */}
+      {/* 3. Watch Build — scroll-synced assembly animation */}
+      <WatchBuildAnimation />
+
+      {/* 4. Features — hover lift + gold border glow cards */}
+      <FeaturesGrid />
+
+      {/* 5. Press Badges — muted silver logos + trust line */}
+      <PressBadges />
+
+      {/* 6. Showcase — featured products (early exposure) */}
       <ShowcaseSection />
 
-      {/* 4. Problem → Solution — the "why" */}
+      {/* 7. Problem → Solution — the "why" */}
       <ProblemSolution />
 
       <ParallaxDivider />
 
-      {/* 5. Features — "Why Choose Internity" */}
-      <FeaturesGrid />
-
-      {/* 6. Collections — browse by category */}
+      {/* 8. Collections — browse by category */}
       <CollectionReveal />
 
-      {/* 7. Video — cinematic brand film */}
+      {/* 9. Limited Editions — scarcity-driven section */}
+      <LimitedEditions />
+
+      {/* 10. Video — cinematic brand film */}
       <VideoShowcase />
 
-      {/* 8. Benefits — ownership experience */}
+      {/* 11. Benefits — ownership experience */}
       <BenefitsSection />
 
       <ParallaxDivider />
 
-      {/* 9. Watch Build — scroll-synced assembly animation */}
-      <WatchBuildAnimation />
-
-      {/* 10. Heritage — craftsmanship timeline */}
+      {/* 12. Heritage — craftsmanship timeline */}
       <HeritageTimeline />
 
-      {/* 11. Testimonials — collector stories & social proof */}
+      {/* 13. Testimonials — collector stories & social proof */}
       <TestimonialsSection />
 
-      {/* 12. Statement — brand message */}
+      {/* 14. Statement — brand message */}
       <StatementBlock />
 
-      {/* 13. Final CTA — conversion close */}
+      {/* 15. Premium CTA — "Own a Legacy." + shimmer */}
       <CTASection />
     </>
   );

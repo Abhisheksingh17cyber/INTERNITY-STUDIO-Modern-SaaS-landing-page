@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { gsap, ScrollTrigger, registerGSAPPlugins, splitTextIntoSpans } from '@/lib/gsap';
 import MagneticButton from '@/components/animations/MagneticButton';
-import { ArrowRight, Calendar } from 'lucide-react';
+import { ArrowRight, Play } from 'lucide-react';
 
 registerGSAPPlugins();
 
@@ -25,14 +25,14 @@ export default function HeroSection() {
 
     // Split and animate heading
     const chars = splitTextIntoSpans(headingRef.current, 'chars');
-    gsap.set(chars, { y: 100, opacity: 0, rotateX: -90 });
+    gsap.set(chars, { y: 120, opacity: 0, rotateX: -90 });
 
     tl.to(chars, {
       y: 0,
       opacity: 1,
       rotateX: 0,
-      duration: 1,
-      stagger: 0.02,
+      duration: 1.2,
+      stagger: 0.03,
       ease: 'power4.out',
     });
 
@@ -86,7 +86,7 @@ export default function HeroSection() {
       );
     }
 
-    // Scroll-triggered parallax — synced text + watch movement
+    // Scroll-triggered parallax — synced text + watch movement (scrub: true)
     if (sectionRef.current) {
       ScrollTrigger.create({
         trigger: sectionRef.current,
@@ -124,100 +124,104 @@ export default function HeroSection() {
       ref={sectionRef}
       className="relative min-h-screen flex items-center overflow-hidden"
     >
-      {/* Background gradient */}
+      {/* Deep black background with subtle radial glow behind watch */}
       <div className="absolute inset-0 bg-gradient-to-b from-obsidian via-obsidian to-charcoal-dark" />
+      <div className="absolute top-1/2 right-[25%] -translate-y-1/2 w-[600px] h-[600px] bg-gold/[0.04] rounded-full blur-[200px] pointer-events-none" />
       
       {/* Subtle grid pattern */}
       <div
         className="absolute inset-0 opacity-[0.03]"
         style={{
-          backgroundImage: `linear-gradient(rgba(212,175,55,0.3) 1px, transparent 1px), 
-                           linear-gradient(90deg, rgba(212,175,55,0.3) 1px, transparent 1px)`,
-          backgroundSize: '60px 60px',
+          backgroundImage: `linear-gradient(rgba(198,167,94,0.2) 1px, transparent 1px), 
+                           linear-gradient(90deg, rgba(198,167,94,0.2) 1px, transparent 1px)`,
+          backgroundSize: '80px 80px',
         }}
       />
 
       <div className="container-luxury relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-6 items-center min-h-screen py-24 md:py-32">
-          {/* Text Content */}
+          {/* Text Content — Left */}
           <div className="flex flex-col justify-center">
-            <div className="mb-4">
-              <span className="font-body text-xs tracking-[0.4em] uppercase text-gold/60 block mb-4">
-                Master Watchmakers · Geneva, Since 1947
+            <div className="mb-6">
+              <span className="font-body text-[10px] md:text-xs tracking-[0.5em] uppercase text-gold/50 block">
+                Swiss Horology · Since 1947
               </span>
             </div>
 
             <h1
               ref={headingRef}
-              className="text-hero font-display font-bold text-gold leading-[0.9] tracking-wider uppercase mb-4 md:mb-6"
+              className="text-hero font-display font-bold text-gold leading-[0.85] tracking-wider uppercase mb-6 md:mb-8"
             >
-              Wear More Than a Watch — Wear a Legacy
+              Time, Perfected.
             </h1>
 
             <p
               ref={taglineRef}
-              className="font-display text-lg md:text-2xl text-gold-light/80 tracking-wide mb-4 md:mb-6"
+              className="font-display text-lg md:text-2xl text-gold-light/70 tracking-wide mb-6"
             >
-              Limited editions from master watchmakers. Exclusivity you can feel.
+              Precision engineered Swiss timepieces crafted for legacy.
             </p>
 
             <p
               ref={subRef}
-              className="text-silver-dark font-body text-base md:text-lg leading-relaxed max-w-lg mb-8 md:mb-10"
+              className="text-silver-dark font-body text-sm md:text-base leading-relaxed max-w-md mb-10"
             >
-              312 hand-finished components. 72-hour power reserve. COSC-certified precision. 
-              Each Internity timepiece is assembled by a single master watchmaker — 
-              so no two are ever identical.
+              Exclusive Swiss timepieces — curated for those who value true heritage.
+              312 hand-finished components. COSC-certified precision. 
+              Each assembled by a single master watchmaker.
             </p>
 
-            <div ref={ctaRef} className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 md:mb-10">
+            <div ref={ctaRef} className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-10">
               <Link href="/products">
-                <MagneticButton className="w-full sm:w-auto text-sm md:text-base px-6 md:px-8 py-3.5 md:py-4 bg-gold text-obsidian font-semibold hover:bg-gold-light transition-colors">
-                  Shop The Collection
+                <MagneticButton className="w-full sm:w-auto text-sm md:text-base px-8 md:px-10 py-4 md:py-5 bg-gold text-obsidian font-semibold hover:bg-gold-light transition-colors">
+                  Explore Collection
                   <ArrowRight className="w-4 h-4 ml-2 inline" />
                 </MagneticButton>
               </Link>
-              <Link href="/contact">
-                <MagneticButton className="w-full sm:w-auto bg-transparent border border-gold/30 text-gold hover:bg-gold/10 hover:border-gold/60 text-sm md:text-base px-6 md:px-8 py-3.5 md:py-4">
-                  <Calendar className="w-4 h-4 mr-2 inline" />
-                  Book a Private Viewing
+              <Link href="#video-showcase">
+                <MagneticButton className="w-full sm:w-auto bg-transparent border border-gold/30 text-gold hover:bg-gold/10 hover:border-gold/60 text-sm md:text-base px-8 md:px-10 py-4 md:py-5">
+                  <Play className="w-4 h-4 mr-2 inline" />
+                  Watch the Craft
                 </MagneticButton>
               </Link>
             </div>
 
             {/* Trust stats bar */}
-            <div ref={statsRef} className="flex flex-wrap gap-6 md:gap-8 border-t border-gold/10 pt-6">
+            <div ref={statsRef} className="flex flex-wrap gap-8 border-t border-[rgba(255,255,255,0.08)] pt-6">
               <div>
-                <span className="font-display text-xl md:text-2xl text-gold">75+</span>
-                <span className="block font-body text-[10px] md:text-xs tracking-[0.2em] uppercase text-silver-dark/60 mt-1">Years Heritage</span>
+                <span className="font-display text-2xl md:text-3xl text-gold">75+</span>
+                <span className="block font-body text-[10px] tracking-[0.2em] uppercase text-silver-dark/50 mt-1">Years Heritage</span>
               </div>
               <div>
-                <span className="font-display text-xl md:text-2xl text-gold">12K+</span>
-                <span className="block font-body text-[10px] md:text-xs tracking-[0.2em] uppercase text-silver-dark/60 mt-1">Collectors</span>
+                <span className="font-display text-2xl md:text-3xl text-gold">12K+</span>
+                <span className="block font-body text-[10px] tracking-[0.2em] uppercase text-silver-dark/50 mt-1">Collectors</span>
               </div>
               <div>
-                <span className="font-display text-xl md:text-2xl text-gold">99.8%</span>
-                <span className="block font-body text-[10px] md:text-xs tracking-[0.2em] uppercase text-silver-dark/60 mt-1">Precision Rate</span>
+                <span className="font-display text-2xl md:text-3xl text-gold">99.8%</span>
+                <span className="block font-body text-[10px] tracking-[0.2em] uppercase text-silver-dark/50 mt-1">Precision Rate</span>
               </div>
             </div>
           </div>
 
-          {/* Watch Visual */}
+          {/* Watch Visual — Right — with radial glow */}
           <div ref={watchRef} className="flex items-center justify-center lg:justify-end order-first lg:order-last">
-            <div className="relative w-[280px] h-[280px] md:w-[420px] md:h-[420px] lg:w-[500px] lg:h-[500px]">
+            <div className="relative w-[300px] h-[300px] md:w-[440px] md:h-[440px] lg:w-[520px] lg:h-[520px]">
+              {/* Radial glow behind watch */}
+              <div className="absolute inset-0 rounded-full bg-gradient-radial from-gold/[0.06] to-transparent blur-3xl scale-125 pointer-events-none" />
+              
               {/* Outer glow ring */}
               <div className="absolute inset-0 rounded-full border border-gold/10 animate-spin-slow" />
               <div className="absolute inset-4 rounded-full border border-gold/5 animate-spin-slow" style={{ animationDirection: 'reverse' }} />
               
               {/* Watch image */}
-              <div className="absolute inset-8 rounded-full overflow-hidden border border-gold/20 flex items-center justify-center">
+              <div className="absolute inset-8 rounded-full overflow-hidden border border-[rgba(255,255,255,0.08)] flex items-center justify-center">
                 <Image
                   src="/watches/watch-1.png"
                   alt="Internity Sovereign Chronograph"
                   fill
-                  className="object-cover scale-110 group-hover:scale-115 transition-transform duration-1000"
+                  className="object-cover scale-110 transition-transform duration-1000"
                   priority
-                  sizes="(max-width: 768px) 280px, (max-width: 1024px) 420px, 500px"
+                  sizes="(max-width: 768px) 300px, (max-width: 1024px) 440px, 520px"
                 />
                 {/* Subtle overlay for blending */}
                 <div className="absolute inset-0 bg-gradient-to-t from-obsidian/30 via-transparent to-obsidian/10 pointer-events-none" />
@@ -238,7 +242,7 @@ export default function HeroSection() {
         <span className="font-body text-[10px] tracking-[0.3em] uppercase text-silver/20">
           Scroll
         </span>
-        <div className="w-px h-10 md:h-12 bg-gradient-to-b from-gold/40 to-transparent animate-bounce" />
+        <div className="w-px h-12 bg-gradient-to-b from-gold/40 to-transparent animate-bounce" />
       </div>
     </section>
   );
