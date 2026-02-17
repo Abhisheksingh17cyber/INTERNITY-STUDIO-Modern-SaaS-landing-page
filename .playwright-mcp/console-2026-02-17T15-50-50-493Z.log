@@ -1,0 +1,8 @@
+[    2061ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://internity-studio-modern-saa-s-landi-eight.vercel.app/favicon.ico:0
+[    2283ms] TypeError: Cannot read properties of undefined (reading 'ReactCurrentBatchConfig')
+    at e.exports (https://internity-studio-modern-saa-s-landi-eight.vercel.app/_next/static/chunks/3962.856623a8cf126c0a.js:1:46704)
+    at https://internity-studio-modern-saa-s-landi-eight.vercel.app/_next/static/chunks/3962.856623a8cf126c0a.js:1:16058
+    at 10697 (https://internity-studio-modern-saa-s-landi-eight.vercel.app/_next/static/chunks/3962.856623a8cf126c0a.js:1:18594)
+    at r (https://internity-studio-modern-saa-s-landi-eight.vercel.app/_next/static/chunks/webpack-06866479a8bbc58b.js:1:143)
+    at 94007 (https://internity-studio-modern-saa-s-landi-eight.vercel.app/_next/static/chunks/4007.9173e1bffda54cd5.js:1:152)
+    at r (https://internity-studio-modern-saa-s-landi-eight.vercel.app/_next/static/chunks/webpack-06866479a8bbc58b.js:1:143)
