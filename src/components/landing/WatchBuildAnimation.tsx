@@ -36,18 +36,20 @@ export default function WatchBuildAnimation() {
     if (!sectionRef.current || !containerRef.current) return;
 
     const ctx = gsap.context(() => {
-      const section = sectionRef.current!;
-      const parts = section.querySelectorAll<HTMLElement>('.watch-part');
-      const textPanels = section.querySelectorAll<HTMLElement>('.build-text');
-      const progressBar = section.querySelector<HTMLElement>('.build-progress');
+      const container = containerRef.current!;
+      const parts = container.querySelectorAll<HTMLElement>('.watch-part');
+      const textPanels = container.querySelectorAll<HTMLElement>('.build-text');
+      const progressBar = container.querySelector<HTMLElement>('.build-progress');
 
-      // Scroll-synced timeline using sticky container (no pin: true)
       const tl = gsap.timeline({
         scrollTrigger: {
-          trigger: section,
-          start: 'top top',
-          end: 'bottom bottom',
+          trigger: container,
+          pin: true,
           scrub: 1,
+          start: 'top top',
+          end: () => `+=${window.innerHeight * 3}`,
+          anticipatePin: 1,
+          pinSpacing: true,
         },
       });
 
@@ -97,10 +99,9 @@ export default function WatchBuildAnimation() {
     <section
       ref={sectionRef}
       className="relative bg-obsidian"
-      style={{ height: '400vh' }}
     >
-      {/* Sticky container — stays in view while parent scrolls */}
-      <div ref={containerRef} className="sticky top-0 h-screen overflow-hidden">
+      {/* GSAP pins this container while scroll-synced animation plays */}
+      <div ref={containerRef} className="relative h-screen overflow-hidden">
         {/* Subtle background glow */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
           <div className="w-[500px] h-[500px] bg-gold/[0.03] rounded-full blur-[180px]" />
