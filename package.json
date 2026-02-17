@@ -1,9 +1,48 @@
 {
+  "name": "internity-watches",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
   "dependencies": {
-    "aos": "^2.3.4",
+    "@googlemaps/react-wrapper": "^1.1.42",
+    "@react-three/drei": "^9.109.2",
+    "@react-three/fiber": "^8.17.5",
+    "bcryptjs": "^2.4.3",
+    "embla-carousel-react": "^8.3.0",
     "framer-motion": "^12.34.0",
     "gsap": "^3.14.2",
-    "lottie-react": "^2.4.1",
-    "react-scroll-parallax": "^3.5.0"
+    "lenis": "^1.1.13",
+    "lucide-react": "^0.460.0",
+    "mongoose": "^8.8.0",
+    "next": "14.2.15",
+    "next-auth": "^4.24.8",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-hot-toast": "^2.4.1",
+    "recharts": "^2.13.0",
+    "sharp": "^0.33.5",
+    "three": "^0.169.0",
+    "zod": "^3.23.8",
+    "zustand": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/node": "^22.8.0",
+    "@types/react": "^18.3.11",
+    "@types/react-dom": "^18.3.1",
+    "@types/three": "^0.169.0",
+    "autoprefixer": "^10.4.20",
+    "clsx": "^2.1.1",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "14.2.15",
+    "postcss": "^8.4.47",
+    "tailwind-merge": "^2.5.4",
+    "tailwindcss": "^3.4.14",
+    "typescript": "^5.6.3"
   }
 }

@@ -1,0 +1,220 @@
+'use client';
+
+import { useEffect, useRef } from 'react';
+import Link from 'next/link';
+import { gsap, ScrollTrigger, registerGSAPPlugins, splitTextIntoSpans } from '@/lib/gsap';
+import MagneticButton from '@/components/animations/MagneticButton';
+import { ArrowRight } from 'lucide-react';
+
+registerGSAPPlugins();
+
+export default function HeroSection() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const headingRef = useRef<HTMLHeadingElement>(null);
+  const subRef = useRef<HTMLParagraphElement>(null);
+  const ctaRef = useRef<HTMLDivElement>(null);
+  const watchRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!sectionRef.current || !headingRef.current) return;
+
+    const tl = gsap.timeline({ delay: 3.5 }); // After preloader
+
+    // Split and animate heading
+    const chars = splitTextIntoSpans(headingRef.current, 'chars');
+    gsap.set(chars, { y: 100, opacity: 0, rotateX: -90 });
+
+    tl.to(chars, {
+      y: 0,
+      opacity: 1,
+      rotateX: 0,
+      duration: 1,
+      stagger: 0.02,
+      ease: 'power4.out',
+    });
+
+    // Subtitle fade in
+    if (subRef.current) {
+      gsap.set(subRef.current, { y: 40, opacity: 0 });
+      tl.to(
+        subRef.current,
+        { y: 0, opacity: 1, duration: 0.8, ease: 'power4.out' },
+        '-=0.4'
+      );
+    }
+
+    // CTA slide in
+    if (ctaRef.current) {
+      gsap.set(ctaRef.current, { y: 30, opacity: 0 });
+      tl.to(
+        ctaRef.current,
+        { y: 0, opacity: 1, duration: 0.6, ease: 'power4.out' },
+        '-=0.3'
+      );
+    }
+
+    // Watch visual float in
+    if (watchRef.current) {
+      gsap.set(watchRef.current, { scale: 0.8, opacity: 0, rotation: -15 });
+      tl.to(
+        watchRef.current,
+        { scale: 1, opacity: 1, rotation: 0, duration: 1.2, ease: 'power4.out' },
+        '-=0.8'
+      );
+    }
+
+    // Scroll-triggered parallax
+    if (sectionRef.current) {
+      ScrollTrigger.create({
+        trigger: sectionRef.current,
+        start: 'top top',
+        end: 'bottom top',
+        scrub: true,
+        onUpdate: (self) => {
+          const progress = self.progress;
+          if (headingRef.current) {
+            gsap.set(headingRef.current, { y: progress * -100, opacity: 1 - progress * 0.8 });
+          }
+          if (watchRef.current) {
+            gsap.set(watchRef.current, { y: progress * -50, scale: 1 - progress * 0.2 });
+          }
+        },
+      });
+    }
+
+    return () => {
+      tl.kill();
+      ScrollTrigger.getAll().forEach((st) => {
+        if (st.trigger === sectionRef.current) st.kill();
+      });
+    };
+  }, []);
+
+  return (
+    <section
+      ref={sectionRef}
+      className="relative min-h-screen flex items-center overflow-hidden"
+    >
+      {/* Background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-b from-obsidian via-obsidian to-charcoal-dark" />
+      
+      {/* Subtle grid pattern */}
+      <div
+        className="absolute inset-0 opacity-[0.03]"
+        style={{
+          backgroundImage: `linear-gradient(rgba(212,175,55,0.3) 1px, transparent 1px), 
+                           linear-gradient(90deg, rgba(212,175,55,0.3) 1px, transparent 1px)`,
+          backgroundSize: '60px 60px',
+        }}
+      />
+
+      <div className="container-luxury relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-6 items-center min-h-screen py-32">
+          {/* Text Content */}
+          <div className="flex flex-col justify-center">
+            <div className="mb-6">
+              <span className="font-body text-xs tracking-[0.4em] uppercase text-gold/60 block mb-4">
+                Swiss Craftsmanship Since 1947
+              </span>
+            </div>
+
+            <h1
+              ref={headingRef}
+              className="text-hero font-display font-bold text-gold leading-[0.9] tracking-wider uppercase mb-8"
+            >
+              Crafted for Eternity
+            </h1>
+
+            <p
+              ref={subRef}
+              className="text-silver/60 font-body text-lg md:text-xl leading-relaxed max-w-lg mb-12"
+            >
+              Where mechanical precision meets artistic mastery. Each timepiece is a 
+              symphony of 312 hand-finished components, assembled by master watchmakers 
+              in our Swiss atelier.
+            </p>
+
+            <div ref={ctaRef} className="flex flex-wrap gap-4">
+              <Link href="/products">
+                <MagneticButton>
+                  Explore Collection
+                  <ArrowRight className="w-4 h-4 ml-2 inline" />
+                </MagneticButton>
+              </Link>
+              <Link href="/about">
+                <MagneticButton className="bg-transparent border border-gold/30 text-gold hover:bg-gold/10 hover:border-gold/60">
+                  Our Story
+                </MagneticButton>
+              </Link>
+            </div>
+          </div>
+
+          {/* Watch Visual */}
+          <div ref={watchRef} className="flex items-center justify-center lg:justify-end">
+            <div className="relative w-[300px] h-[300px] md:w-[450px] md:h-[450px] lg:w-[500px] lg:h-[500px]">
+              {/* Outer glow ring */}
+              <div className="absolute inset-0 rounded-full border border-gold/10 animate-spin-slow" />
+              <div className="absolute inset-4 rounded-full border border-gold/5 animate-spin-slow" style={{ animationDirection: 'reverse' }} />
+              
+              {/* Watch face */}
+              <div className="absolute inset-8 rounded-full bg-gradient-to-br from-charcoal to-charcoal-dark border border-gold/20 flex items-center justify-center overflow-hidden">
+                {/* Dial */}
+                <div className="relative w-full h-full flex items-center justify-center">
+                  {/* Hour markers */}
+                  {[...Array(12)].map((_, i) => (
+                    <div
+                      key={i}
+                      className="absolute w-[2px] bg-gold"
+                      style={{
+                        height: i % 3 === 0 ? '16px' : '8px',
+                        top: '12%',
+                        left: '50%',
+                        transformOrigin: `50% ${(300 * 0.38)}px`,
+                        transform: `translateX(-50%) rotate(${i * 30}deg)`,
+                      }}
+                    />
+                  ))}
+                  
+                  {/* Brand text on dial */}
+                  <div className="absolute top-[35%] text-center">
+                    <span className="font-display text-gold text-[10px] md:text-xs tracking-[0.3em] uppercase block">
+                      Internity
+                    </span>
+                    <span className="font-body text-gold/40 text-[7px] md:text-[8px] tracking-[0.2em] uppercase block mt-1">
+                      Swiss Made
+                    </span>
+                  </div>
+                  
+                  {/* Hands */}
+                  <div className="absolute w-[3px] h-[28%] bg-gold rounded-full left-1/2 top-[22%] -translate-x-1/2 origin-bottom rotate-[-30deg] shadow-lg" />
+                  <div className="absolute w-[2px] h-[35%] bg-gold/80 rounded-full left-1/2 top-[15%] -translate-x-1/2 origin-bottom rotate-[60deg]" />
+                  <div className="absolute w-[1px] h-[38%] bg-gold-light rounded-full left-1/2 top-[12%] -translate-x-1/2 origin-bottom rotate-[120deg] animate-[spin_60s_linear_infinite]" />
+                  
+                  {/* Center dot */}
+                  <div className="absolute w-3 h-3 rounded-full bg-gold shadow-lg left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" />
+                  
+                  {/* Sub-dial decoration */}
+                  <div className="absolute bottom-[30%] w-12 h-12 md:w-16 md:h-16 rounded-full border border-gold/10" />
+                </div>
+              </div>
+
+              {/* Crown */}
+              <div className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 w-3 md:w-4 h-6 md:h-8 bg-gradient-to-r from-gold/60 to-gold/30 rounded-r-sm" />
+              
+              {/* Shadow/glow */}
+              <div className="absolute -inset-8 rounded-full bg-gold/5 blur-3xl animate-glow-pulse pointer-events-none" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
+        <span className="font-body text-[10px] tracking-[0.3em] uppercase text-silver/20">
+          Scroll
+        </span>
+        <div className="w-px h-12 bg-gradient-to-b from-gold/40 to-transparent animate-bounce" />
+      </div>
+    </section>
+  );
+}
