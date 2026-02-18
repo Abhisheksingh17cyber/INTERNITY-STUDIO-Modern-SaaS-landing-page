@@ -62,7 +62,7 @@ export default function HorizontalScroll({ children, className = '' }: Horizonta
   }, []);
 
   return (
-    <div ref={containerRef} className={`relative h-screen overflow-hidden ${className}`}>
+    <div ref={containerRef} className={`relative h-screen overflow-hidden bg-obsidian ${className}`} style={{ zIndex: 1 }}>
       <div ref={scrollRef} className="horizontal-scroll-container h-full">
         {children}
       </div>

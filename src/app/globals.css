@@ -238,6 +238,14 @@
 }
 
 /* ═══════════════════════════════════════════
+   GSAP Pin-Spacer — prevent z-index leaking
+   ═══════════════════════════════════════════ */
+.pin-spacer {
+  z-index: auto !important;
+  overflow: visible !important;
+}
+
+/* ═══════════════════════════════════════════
    Split Text Helpers
    ═══════════════════════════════════════════ */
 .split-word,

@@ -101,7 +101,7 @@ export default function WatchBuildAnimation() {
       className="relative bg-obsidian"
     >
       {/* GSAP pins this container while scroll-synced animation plays */}
-      <div ref={containerRef} className="relative h-screen overflow-hidden">
+      <div ref={containerRef} className="relative h-screen overflow-hidden bg-obsidian" style={{ zIndex: 1 }}>
         {/* Subtle background glow */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
           <div className="w-[500px] h-[500px] bg-gold/[0.03] rounded-full blur-[180px]" />
