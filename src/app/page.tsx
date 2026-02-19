@@ -17,6 +17,7 @@ import VideoShowcase from '@/components/landing/VideoShowcase';
 import StatementBlock from '@/components/landing/StatementBlock';
 import CTASection from '@/components/landing/CTASection';
 import HeritageTimeline from '@/components/landing/HeritageTimeline';
+import ComparisonTable from '@/components/landing/ComparisonTable';
 
 const WatchBuildAnimation = dynamic(
   () => import('@/components/landing/WatchBuildAnimation'),
@@ -91,6 +92,11 @@ export default function HomePage() {
       {/* 11. Benefits — ownership experience */}
       <div className="relative z-[5] bg-obsidian">
         <BenefitsSection />
+      </div>
+
+      {/* Comparison — side-by-side model comparison */}
+      <div className="relative z-[5] bg-obsidian">
+        <ComparisonTable />
       </div>
 
       <div className="relative z-[5] bg-obsidian">

@@ -193,3 +193,97 @@ export const MOCK_PRODUCTS = [
     featured: false,
   },
 ];
+
+export const COMPARISON_WATCHES = [
+  {
+    productId: '1',
+    name: 'Sovereign Chronograph',
+    image: '/watches/watch-1.png',
+    price: 12500,
+    specs: {
+      case: '42mm 904L Steel',
+      movement: 'Automatic Chronograph',
+      water_resistance: '100m',
+      power_reserve: '72 hours',
+      crystal: 'Sapphire',
+    },
+    features: {
+      chronograph: true,
+      gmt: false,
+      luminous: true,
+      exhibition_caseback: false,
+    },
+  },
+  {
+    productId: '2',
+    name: 'Eternal Diver',
+    image: '/watches/watch-4.png',
+    price: 8900,
+    specs: {
+      case: '44mm Titanium',
+      movement: 'Automatic',
+      water_resistance: '300m',
+      power_reserve: '60 hours',
+      crystal: 'Sapphire',
+    },
+    features: {
+      chronograph: false,
+      gmt: false,
+      luminous: true,
+      exhibition_caseback: false,
+    },
+  },
+  {
+    productId: '4',
+    name: 'Apex Skeleton',
+    image: '/watches/watch-8.png',
+    price: 22000,
+    specs: {
+      case: '41mm Platinum',
+      movement: 'Manual Skeleton',
+      water_resistance: '50m',
+      power_reserve: '80 hours',
+      crystal: 'Sapphire',
+    },
+    features: {
+      chronograph: false,
+      gmt: false,
+      luminous: false,
+      exhibition_caseback: true,
+    },
+  },
+  {
+    productId: '5',
+    name: 'Meridian GMT',
+    image: '/watches/watch-9.png',
+    price: 11200,
+    specs: {
+      case: '40mm Steel',
+      movement: 'Automatic GMT',
+      water_resistance: '100m',
+      power_reserve: '70 hours',
+      crystal: 'Sapphire',
+    },
+    features: {
+      chronograph: false,
+      gmt: true,
+      luminous: true,
+      exhibition_caseback: true,
+    },
+  },
+];
+
+export const COMPARISON_SPEC_ROWS = [
+  { key: 'case', label: 'Case' },
+  { key: 'movement', label: 'Movement' },
+  { key: 'water_resistance', label: 'Water Resistance' },
+  { key: 'power_reserve', label: 'Power Reserve' },
+  { key: 'crystal', label: 'Crystal' },
+] as const;
+
+export const COMPARISON_FEATURE_ROWS = [
+  { key: 'chronograph', label: 'Chronograph' },
+  { key: 'gmt', label: 'GMT' },
+  { key: 'luminous', label: 'Luminous Indices' },
+  { key: 'exhibition_caseback', label: 'Exhibition Caseback' },
+] as const;
