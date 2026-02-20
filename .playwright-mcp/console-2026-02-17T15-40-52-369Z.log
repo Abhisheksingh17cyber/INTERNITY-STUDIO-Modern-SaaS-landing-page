@@ -1,8 +1,0 @@
-[    1407ms] TypeError: Cannot read properties of undefined (reading 'ReactCurrentBatchConfig')
-    at e.exports (https://internity-studio-modern-saa-s-landi-eight.vercel.app/_next/static/chunks/195.da85210b80ad567a.js:1:50662)
-    at https://internity-studio-modern-saa-s-landi-eight.vercel.app/_next/static/chunks/195.da85210b80ad567a.js:1:15749
-    at 44904 (https://internity-studio-modern-saa-s-landi-eight.vercel.app/_next/static/chunks/195.da85210b80ad567a.js:1:18285)
-    at r (https://internity-studio-modern-saa-s-landi-eight.vercel.app/_next/static/chunks/webpack-47e930bd22d84fdb.js:1:143)
-    at 28644 (https://internity-studio-modern-saa-s-landi-eight.vercel.app/_next/static/chunks/8644.85f8a5085009b709.js:1:152)
-    at r (https://internity-studio-modern-saa-s-landi-eight.vercel.app/_next/static/chunks/webpack-47e930bd22d84fdb.js:1:143)
-[    1877ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://internity-studio-modern-saa-s-landi-eight.vercel.app/favicon.ico:0

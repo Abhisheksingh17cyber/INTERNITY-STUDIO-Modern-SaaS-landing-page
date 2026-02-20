@@ -11,7 +11,7 @@ export default function VideoShowcase() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
-  const [isMuted, setIsMuted] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
   const [isPlaying, setIsPlaying] = useState(false);
 
   useEffect(() => {
@@ -21,6 +21,7 @@ export default function VideoShowcase() {
 
     // Set very low volume
     video.volume = 0.08;
+    video.muted = true;
 
     // ScrollTrigger: play video when in view, pause when out
     const trigger = ScrollTrigger.create({
